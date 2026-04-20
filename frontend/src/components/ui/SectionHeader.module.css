@@ -1,0 +1,41 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.header.left {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.badgeCenter {
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.badgeLeft {
+  display: flex;
+  justify-content: flex-start;
+  width: fit-content;
+}
+
+.title {
+  margin-top: 44px;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: var(--color-text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.left .subtitle {
+  margin: 0;
+}

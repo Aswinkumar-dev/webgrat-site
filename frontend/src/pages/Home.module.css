@@ -1,0 +1,426 @@
+/* Home Hero Section — override global section padding (globals use 100px bottom) */
+.hero {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+  padding-top: 60px;
+  /* Space before logos strip (hero is not a “content” section; keep rhythm explicit) */
+  padding-bottom: clamp(44px, 5vw, 64px);
+}
+
+.heroBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-color: var(--color-dark);
+}
+
+.blob1,
+.blob2 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  animation: blobPulse 8s infinite alternate ease-in-out;
+}
+
+.blob1 {
+  width: 60vw;
+  height: 60vw;
+  max-width: 800px;
+  max-height: 800px;
+  background-color: var(--color-primary);
+  opacity: 0.06;
+  top: -10%;
+  right: -8%;
+}
+
+.blob2 {
+  width: 50vw;
+  height: 50vw;
+  max-width: 600px;
+  max-height: 600px;
+  background-color: var(--color-secondary);
+  opacity: 0.1;
+  bottom: -20%;
+  left: -10%;
+  animation-delay: -4s;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+  /* Main layout already clears the fixed nav — this is extra air below the bar */
+  column-gap: clamp(120px, 14vw, 200px);
+  row-gap: 36px;
+  align-items: center;
+  width: 100%;
+  padding-top: clamp(20px, 3vw, 36px);
+  padding-bottom: 0;
+}
+
+.heroCopy {
+  max-width: 640px;
+  padding-right: clamp(0px, 1.5vw, 16px);
+}
+
+.heroVisual {
+  position: relative;
+  justify-self: end;
+  width: 100%;
+  max-width: 520px;
+  padding-left: clamp(0px, 1vw, 12px);
+}
+
+.heroH1 {
+  font-size: clamp(36px, 4.2vw, 56px);
+  margin: 20px 0;
+  max-width: 18ch;
+}
+
+.heroAccent {
+  color: var(--color-primary);
+  font-style: italic;
+  font-weight: 800;
+}
+
+.heroSub {
+  font-size: clamp(17px, 1.35vw, 20px);
+  color: var(--color-text-muted);
+  margin-bottom: 32px;
+  max-width: 520px;
+  line-height: 1.65;
+}
+
+.heroCtas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.heroSocial {
+  font-size: 18px;
+  color: var(--color-text-muted);
+}
+
+/* Logos Strip */
+.logosStrip {
+  background-color: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: 8px;
+  padding: clamp(28px, 3.5vw, 44px) 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.logosInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.logosLabel {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-text-secondary);
+  flex-shrink: 0;
+}
+
+.logosTrack {
+  display: flex;
+  gap: 80px;
+  align-items: center;
+  animation: marquee 30s linear infinite;
+  width: max-content;
+}
+
+.logoItem {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 32px;
+  color: #FFFFFF;
+  opacity: 0.25;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-50% - 40px));
+  }
+}
+
+/* Services section */
+.servicesSection {
+  padding-top: 64px;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Why Us section */
+.whyGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.whyBlock {
+  padding: 32px;
+  border-left: 1px solid rgba(46, 247, 142, 0.2);
+}
+
+.whyTitle {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.whyDesc {
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* Stats section */
+.statsSection {
+  background-color: var(--color-secondary);
+  padding: 56px 0;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  text-align: center;
+}
+
+.statNumber {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 52px;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+
+.statLabel {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Process section */
+.processSection {
+  padding: 48px 0 52px;
+}
+
+.processHeader {
+  margin-bottom: 30px;
+}
+
+.processGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  position: relative;
+}
+
+
+
+/* Testimonials / Blog Grids */
+.clientResultsSection {
+  padding: 62px 0 68px;
+}
+
+.latestInsightsSection {
+  padding: 62px 0 68px;
+}
+
+.latestInsightsHeader {
+  align-items: center;
+  text-align: center;
+}
+
+.whyWebgratHeader {
+  align-items: center;
+  text-align: center;
+}
+
+.testimonialsSection {
+  padding-top: 56px;
+}
+
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Final CTA */
+.finalCta {
+  background-color: var(--color-primary);
+  padding: 48px 0 56px;
+  text-align: center;
+}
+
+.finalCtaH2 {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 44px;
+  color: var(--color-dark);
+  margin-bottom: 16px;
+}
+
+.finalCtaSub {
+  font-size: 17px;
+  color: var(--color-dark);
+  opacity: 0.8;
+  max-width: 600px;
+  margin: 0 auto 28px;
+}
+
+.finalCtaNote {
+  font-size: 13px;
+  color: var(--color-dark);
+  opacity: 0.6;
+  margin-top: 12px;
+}
+
+/* Dark CTA button on primary band — glow uses brand primary + secondary */
+.finalCtaButton {
+  background-color: var(--color-dark) !important;
+  color: var(--color-primary) !important;
+  border: 1px solid rgba(10, 15, 30, 0.35);
+  box-shadow: 0 2px 12px rgba(10, 15, 30, 0.25);
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    box-shadow 0.35s ease,
+    border-color 0.25s ease;
+}
+
+.finalCtaButton:hover {
+  opacity: 1 !important;
+  border-color: var(--color-primary);
+  box-shadow:
+    0 0 0 1px rgba(46, 247, 142, 0.35),
+    0 0 28px rgba(46, 247, 142, 0.55),
+    0 0 52px rgba(46, 247, 142, 0.28),
+    0 12px 40px rgba(30, 95, 161, 0.35);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+
+  .servicesGrid,
+  .whyGrid,
+  .grid3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
+  }
+
+  .processGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .heroGrid {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 40px;
+    padding-top: clamp(16px, 3vw, 28px);
+    padding-bottom: 0;
+  }
+
+  .heroCopy {
+    padding-right: 0;
+  }
+
+  .heroVisual {
+    padding-left: 0;
+  }
+
+  .heroCopy {
+    max-width: none;
+    order: 0;
+  }
+
+  .heroH1 {
+    max-width: none;
+  }
+
+  .heroVisual {
+    justify-self: center;
+    max-width: 440px;
+    order: 1;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .statsSection {
+    padding: 44px 0;
+  }
+
+  .finalCta {
+    padding: 40px 0 46px;
+  }
+
+  .servicesSection {
+    padding-top: 44px;
+  }
+
+  .clientResultsSection {
+    padding: 48px 0 54px;
+  }
+
+  .latestInsightsSection {
+    padding: 48px 0 54px;
+  }
+
+  .processSection {
+    padding: 40px 0 44px;
+  }
+
+  .processHeader {
+    margin-bottom: 24px;
+  }
+
+  .heroH1 {
+    font-size: 40px !important;
+  }
+
+  .heroCtas {
+    flex-direction: column;
+  }
+
+  .servicesGrid,
+  .whyGrid,
+  .grid3 {
+    grid-template-columns: 1fr;
+  }
+
+  .logosTrack {
+    animation: marquee 20s linear infinite;
+    min-width: 200%;
+  }
+}

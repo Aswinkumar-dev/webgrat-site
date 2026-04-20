@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <th:block th:if="${activeTag != null}">
+    <title th:text="'Articles tagged ' + ${activeTag.name} + ' — Webgrat Insights'">Webgrat Insights</title>
+    <meta name="description"
+          th:content="'Articles tagged ' + ${activeTag.name} + ' from the Webgrat team — actionable digital marketing, SEO, AI automation and growth strategies.'">
+    <link rel="canonical" th:href="'https://webgrat.com/blog?tag=' + ${activeTag.slug}">
+  </th:block>
+  <th:block th:unless="${activeTag != null}">
+    <title>Digital Marketing &amp; AI Blog — Webgrat Insights</title>
+    <meta name="description"
+          content="Free digital marketing guides, AI automation tips, SEO strategies, and PPC insights from the Webgrat team. New articles every week.">
+    <link rel="canonical" href="https://webgrat.com/blog">
+  </th:block>
+
+  <meta property="og:type" content="website">
+  <meta property="og:title"
+        th:content="${activeTag != null} ? ('Articles tagged ' + ${activeTag.name} + ' — Webgrat Insights') : 'Digital Marketing &amp; AI Blog — Webgrat Insights'">
+  <meta property="og:description"
+        content="Actionable digital marketing, SEO, AI automation and growth strategies — published weekly by Webgrat.">
+  <meta property="og:url"
+        th:content="${activeTag != null} ? ('https://webgrat.com/blog?tag=' + ${activeTag.slug}) : 'https://webgrat.com/blog'">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" th:href="@{/css/blog-ssr.css}">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="site-brand" href="/">Webgrat</a>
+    <nav class="site-nav">
+      <a href="/">Home</a>
+      <a href="/services">Services</a>
+      <a href="/case-studies">Case Studies</a>
+      <a href="/blog" class="active">Blog</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="blog-hero">
+    <div class="container">
+      <h1 th:if="${activeTag == null}">Digital Marketing &amp; AI Insights</h1>
+      <h1 th:if="${activeTag != null}" th:text="'#' + ${activeTag.name}">#tag</h1>
+      <p th:if="${activeTag == null}">Actionable strategies, industry news, and expert commentary from the Webgrat team.</p>
+      <p th:if="${activeTag != null}" th:text="'All articles tagged ' + ${activeTag.name}">All articles tagged tag</p>
+    </div>
+  </section>
+
+  <section class="blog-section">
+    <div class="container">
+
+      <div class="tabs" th:if="${tags != null and !tags.isEmpty()}">
+        <a class="tab" th:classappend="${activeTagSlug == null} ? ' active'" href="/blog">All</a>
+        <a th:each="t : ${tags}"
+           class="tab"
+           th:classappend="${activeTagSlug != null and #strings.equalsIgnoreCase(activeTagSlug, t.slug)} ? ' active'"
+           th:href="@{/blog(tag=${t.slug})}"
+           th:text="${t.name}">tag</a>
+      </div>
+
+      <p class="empty-state" th:if="${posts == null or posts.isEmpty()}">
+        No posts published yet.
+      </p>
+
+      <div class="grid" th:if="${posts != null and !posts.isEmpty()}">
+        <a th:each="post : ${posts}"
+           class="card"
+           th:href="@{/blog/{slug}(slug=${post.slug})}">
+
+          <div class="card__cover" th:if="${post.coverImageUrl != null and !#strings.isEmpty(post.coverImageUrl)}">
+            <img th:src="${post.coverImageUrl}" th:alt="${post.title}" loading="lazy">
+          </div>
+          <div class="card__cover card__cover--placeholder" th:unless="${post.coverImageUrl != null and !#strings.isEmpty(post.coverImageUrl)}">
+            <span>Webgrat</span>
+          </div>
+
+          <div class="card__body">
+            <div class="card__meta">
+              <span class="badge" th:text="${categoryLabels.get(post.id)}">Category</span>
+              <span class="dot">•</span>
+              <span th:text="${readTimes.get(post.id)}">5 min read</span>
+            </div>
+            <h2 class="card__title" th:text="${post.title}">Post title</h2>
+            <p class="card__excerpt"
+               th:text="${post.excerpt != null and !#strings.isEmpty(post.excerpt)} ? ${post.excerpt} : ''">
+              Excerpt
+            </p>
+            <div class="card__footer">
+              <span th:text="${publishedDates.get(post.id)}">Date</span>
+              <span class="link">Read article →</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© <span th:text="${#dates.format(#dates.createNow(),'yyyy')}">2026</span> Webgrat. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

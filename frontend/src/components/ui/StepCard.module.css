@@ -1,0 +1,38 @@
+.step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+.number {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 64px;
+  color: rgba(46, 247, 142, 0.1);
+  margin-bottom: 20px;
+  line-height: 1;
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+}
+
+
+
+.title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--color-text-primary);
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.description {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}

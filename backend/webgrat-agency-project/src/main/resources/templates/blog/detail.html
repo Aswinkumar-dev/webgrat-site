@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title th:text="(${post.metaTitle != null and !#strings.isEmpty(post.metaTitle)} ? ${post.metaTitle} : ${post.title}) + ' — Webgrat Insights'">
+    Webgrat Insights
+  </title>
+
+  <meta name="description"
+        th:content="${post.metaDescription != null and !#strings.isEmpty(post.metaDescription)} ? ${post.metaDescription} : (${post.excerpt != null and !#strings.isEmpty(post.excerpt)} ? ${post.excerpt} : 'Read the full article on Webgrat Insights.')">
+
+  <link rel="canonical" th:href="|https://webgrat.com/blog/${post.slug}|">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" th:content="${post.title}">
+  <meta property="og:description"
+        th:content="${post.metaDescription != null and !#strings.isEmpty(post.metaDescription)} ? ${post.metaDescription} : (${post.excerpt != null and !#strings.isEmpty(post.excerpt)} ? ${post.excerpt} : 'Read the full article on Webgrat Insights.')">
+  <meta property="og:url" th:content="|https://webgrat.com/blog/${post.slug}|">
+  <meta property="og:image" th:if="${post.coverImageUrl != null and !#strings.isEmpty(post.coverImageUrl)}" th:content="${post.coverImageUrl}">
+  <meta property="article:published_time"
+        th:if="${post.publishedAt != null}"
+        th:content="${post.publishedAt}">
+  <meta property="article:author"
+        th:if="${post.author != null and post.author.fullName != null}"
+        th:content="${post.author.fullName}">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" th:href="@{/css/blog-ssr.css}">
+
+  <script type="application/ld+json" th:utext="${jsonLd}">{}</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="site-brand" href="/">Webgrat</a>
+    <nav class="site-nav">
+      <a href="/">Home</a>
+      <a href="/services">Services</a>
+      <a href="/case-studies">Case Studies</a>
+      <a href="/blog" class="active">Blog</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <article class="post">
+    <div class="container container--narrow">
+
+      <a class="back-link" href="/blog">← Back to all articles</a>
+
+      <div class="post__meta">
+        <span class="badge" th:text="${categoryLabel}">Category</span>
+        <span class="dot">•</span>
+        <span th:text="${readTime}">5 min read</span>
+      </div>
+
+      <h1 class="post__title" th:text="${post.title}">Post title</h1>
+
+      <div class="post__author">
+        <img th:if="${post.author != null and post.author.avatarUrl != null and !#strings.isEmpty(post.author.avatarUrl)}"
+             th:src="${post.author.avatarUrl}"
+             th:alt="${post.author.fullName}"
+             class="post__avatar">
+        <span th:unless="${post.author != null and post.author.avatarUrl != null and !#strings.isEmpty(post.author.avatarUrl)}"
+              class="post__avatar post__avatar--placeholder"></span>
+        <div>
+          <div class="post__author-name"
+               th:text="${post.author != null and post.author.fullName != null} ? ${post.author.fullName} : 'Webgrat Team'">
+            Webgrat Team
+          </div>
+          <div class="post__author-date" th:if="${publishedDate != null and !#strings.isEmpty(publishedDate)}"
+               th:text="|Published ${publishedDate}|">
+            Published date
+          </div>
+        </div>
+      </div>
+
+      <img th:if="${post.coverImageUrl != null and !#strings.isEmpty(post.coverImageUrl)}"
+           th:src="${post.coverImageUrl}"
+           th:alt="${post.title}"
+           class="post__cover">
+
+      <!-- post.content is admin-authored HTML; rendered unescaped exactly like the React side. -->
+      <div class="post__content" th:utext="${post.content}">Post content</div>
+
+      <div class="post__tags" th:if="${post.tags != null and !post.tags.isEmpty()}">
+        <a th:each="t : ${post.tags}"
+           class="tag"
+           th:href="@{/blog(tag=${t.slug})}"
+           th:text="|#${t.name}|">#tag</a>
+      </div>
+
+      <a class="back-link" href="/blog" style="margin-top: 48px; display: inline-block;">← Back to all articles</a>
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© <span th:text="${#dates.format(#dates.createNow(),'yyyy')}">2026</span> Webgrat. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

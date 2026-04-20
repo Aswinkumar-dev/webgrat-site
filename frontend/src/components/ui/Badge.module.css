@@ -1,0 +1,16 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(46, 247, 142, 0.1);
+  color: var(--color-primary);
+  border: 1px solid rgba(46, 247, 142, 0.25);
+  border-radius: 99px;
+  padding: 4px 12px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  width: fit-content;
+}

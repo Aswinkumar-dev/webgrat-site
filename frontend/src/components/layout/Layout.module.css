@@ -1,0 +1,11 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex-grow: 1;
+  /* Navbar is 90px tall — match offset so content never sits under the bar */
+  padding-top: calc(90px + 16px);
+}

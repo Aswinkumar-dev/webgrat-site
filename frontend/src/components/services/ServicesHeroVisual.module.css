@@ -1,0 +1,179 @@
+.root {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 0.9;
+  max-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+}
+
+/* ambient radial glow */
+.glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 72% 65% at 50% 48%,
+    rgba(46, 247, 142, 0.14) 0%,
+    rgba(30, 95, 161, 0.09) 45%,
+    transparent 70%
+  );
+  filter: blur(3px);
+  animation: glowPulse 6s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* panel */
+.frame {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  aspect-ratio: 1 / 0.9;
+  border-radius: 24px;
+  background: linear-gradient(
+    140deg,
+    rgba(13, 22, 40, 0.97) 0%,
+    rgba(10, 15, 30, 0.92) 50%,
+    rgba(13, 22, 40, 0.95) 100%
+  );
+  border: 1px solid rgba(46, 247, 142, 0.15);
+  box-shadow:
+    0 0 0 1px rgba(30, 95, 161, 0.10) inset,
+    0 24px 64px rgba(0, 0, 0, 0.50),
+    0 0 80px rgba(46, 247, 142, 0.04);
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* grid background */
+.gridLines {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(46, 247, 142, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(46, 247, 142, 0.045) 1px, transparent 1px);
+  background-size: 30px 30px;
+  mask-image: radial-gradient(ellipse 80% 75% at 50% 48%, black 10%, transparent 72%);
+  animation: gridDrift 22s linear infinite;
+  pointer-events: none;
+}
+
+/* full-size SVG */
+.network {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Spoke lines ─────────────────── */
+.spoke {
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  animation: spokeFade 3s ease-in-out infinite;
+}
+.s0 { stroke: rgba(46, 247, 142, 0.30); animation-delay: 0.0s; }
+.s1 { stroke: rgba(30, 95, 161, 0.40);  animation-delay: 0.3s; }
+.s2 { stroke: rgba(46, 247, 142, 0.30); animation-delay: 0.6s; }
+.s3 { stroke: rgba(30, 95, 161, 0.40);  animation-delay: 0.9s; }
+.s4 { stroke: rgba(46, 247, 142, 0.30); animation-delay: 1.2s; }
+.s5 { stroke: rgba(30, 95, 161, 0.40);  animation-delay: 1.5s; }
+
+/* ── Central hub ─────────────────── */
+.outerRing {
+  fill: none;
+  stroke: rgba(46, 247, 142, 0.18);
+  stroke-width: 1.5;
+  stroke-dasharray: 6 8;
+  animation: ringRotate 18s linear infinite;
+  transform-origin: 210px 185px;
+}
+
+.hubCore {
+  filter: drop-shadow(0 0 14px rgba(46, 247, 142, 0.45));
+  animation: hubPulse 4.5s ease-in-out infinite;
+  transform-origin: 210px 185px;
+}
+
+.hubLabel {
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.5));
+  pointer-events: none;
+}
+
+/* ── Data packets ────────────────── */
+.packet {
+  fill: var(--color-primary);
+  filter: drop-shadow(0 0 4px rgba(46, 247, 142, 0.8));
+}
+.pkt1, .pkt3, .pkt5 { fill: var(--color-secondary); filter: drop-shadow(0 0 4px rgba(30, 95, 161, 0.8)); }
+
+/* ── Service nodes ───────────────── */
+.serviceNode {
+  animation: nodeAppear 0.6s ease-out both;
+}
+.nd0 { animation-delay: 0.1s; }
+.nd1 { animation-delay: 0.2s; }
+.nd2 { animation-delay: 0.3s; }
+.nd3 { animation-delay: 0.4s; }
+.nd4 { animation-delay: 0.5s; }
+.nd5 { animation-delay: 0.6s; }
+
+.pulseRing {
+  fill: none;
+  stroke-width: 1;
+  animation: pulseExpand 3.5s ease-out infinite;
+}
+.pr0 { animation-delay: 0.0s; }
+.pr1 { animation-delay: 0.6s; }
+.pr2 { animation-delay: 1.2s; }
+.pr3 { animation-delay: 1.8s; }
+.pr4 { animation-delay: 2.4s; }
+.pr5 { animation-delay: 3.0s; }
+
+/* ── Keyframes ───────────────────── */
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.65; transform: scale(1); }
+  50%       { opacity: 1.00; transform: scale(1.06); }
+}
+
+@keyframes gridDrift {
+  0%   { background-position: 0 0; }
+  100% { background-position: 30px 30px; }
+}
+
+@keyframes spokeFade {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 1.0; }
+}
+
+@keyframes ringRotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes hubPulse {
+  0%, 100% { filter: drop-shadow(0 0 14px rgba(46, 247, 142, 0.45)); transform: scale(1); }
+  50%       { filter: drop-shadow(0 0 24px rgba(46, 247, 142, 0.70)); transform: scale(1.04); }
+}
+
+@keyframes nodeAppear {
+  from { opacity: 0; transform: scale(0.6); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulseExpand {
+  0%   { r: 22; opacity: 0.65; }
+  80%  { r: 34; opacity: 0; }
+  100% { r: 34; opacity: 0; }
+}
+
+@media (max-width: 992px) {
+  .root { max-height: 360px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glow, .gridLines, .spoke, .outerRing,
+  .hubCore, .pulseRing, .serviceNode { animation: none; }
+}

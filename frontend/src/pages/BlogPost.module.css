@@ -1,0 +1,247 @@
+.wrapper {
+  padding-top: clamp(24px, 4vw, 40px);
+  padding-bottom: 100px;
+}
+
+.header {
+  max-width: 800px;
+  margin: 0 auto 64px auto;
+  text-align: center;
+}
+
+.meta {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 24px;
+  font-family: var(--font-body);
+  font-size: 14px;
+}
+
+.category {
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+.readTime {
+  color: var(--color-text-muted);
+}
+
+.title {
+  font-size: 48px;
+  margin-bottom: 24px;
+}
+
+.author {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.authorImg {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+.authorInfo {
+  text-align: left;
+}
+
+.authorName {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  font-size: 15px;
+}
+
+.authorDate {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.heroImage {
+  width: 100%;
+  height: 400px;
+  background-color: var(--color-surface);
+  border-radius: 12px;
+  margin-bottom: 64px;
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+}
+
+/* ── Heading hierarchy ─────────────────────────────────── */
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+  font-family: var(--font-heading);
+  color: var(--color-text-primary);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.content h1 {
+  font-size: 40px;
+  margin: 56px 0 24px;
+}
+
+.content h2 {
+  font-size: 30px;
+  margin: 56px 0 20px;
+  padding-top: 12px;
+  /* A subtle primary-colored left accent turns every section heading into a
+     clear visual anchor without feeling heavy. */
+  position: relative;
+  padding-left: 18px;
+}
+
+.content h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 18px;
+  bottom: 12px;
+  width: 4px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, var(--color-primary) 0%, rgba(46, 247, 142, 0.35) 100%);
+}
+
+.content h3 {
+  font-size: 23px;
+  margin: 40px 0 14px;
+  color: var(--color-primary);
+}
+
+.content h4 {
+  font-size: 19px;
+  margin: 32px 0 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.content h5 {
+  font-size: 17px;
+  margin: 28px 0 10px;
+}
+
+.content h6 {
+  font-size: 15px;
+  margin: 24px 0 8px;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Don't leave empty space above the very first heading when it sits at the
+   top of the rendered content. */
+.content > h1:first-child,
+.content > h2:first-child,
+.content > h3:first-child,
+.content > h4:first-child,
+.content > h5:first-child,
+.content > h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.content > h2:first-child::before {
+  top: 6px;
+}
+
+.content p {
+  margin-bottom: 24px;
+}
+
+.content ul,
+.content ol {
+  margin: 0 0 24px 0;
+  padding-left: 24px;
+}
+
+.content li {
+  margin-bottom: 12px;
+}
+
+.content li::marker {
+  color: var(--color-primary);
+}
+
+.content strong {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+.content em {
+  color: var(--color-text-primary);
+}
+
+.content a {
+  color: var(--color-primary);
+  border-bottom: 1px dashed rgba(46, 247, 142, 0.4);
+  text-decoration: none;
+  transition: border-bottom-style 0.2s ease;
+}
+
+.content a:hover {
+  border-bottom-style: solid;
+}
+
+.content blockquote {
+  border-left: 4px solid var(--color-primary);
+  padding: 16px 24px;
+  margin: 40px 0;
+  font-style: italic;
+  font-size: 20px;
+  color: var(--color-text-primary);
+  background: rgba(46, 247, 142, 0.05);
+  border-radius: 0 8px 8px 0;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-primary);
+  font-family: var(--font-body);
+  font-weight: 500;
+  text-decoration: none;
+  margin-top: 64px;
+}
+
+.backLink:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .title { font-size: 36px; }
+  .heroImage { height: 250px; }
+  .content { font-size: 16px; }
+  .content h1 { font-size: 30px; margin: 40px 0 18px; }
+  .content h2 { font-size: 24px; margin: 40px 0 16px; padding-left: 14px; }
+  .content h2::before { top: 12px; bottom: 10px; width: 3px; }
+  .content h3 { font-size: 19px; margin: 28px 0 12px; }
+  .content h4 { font-size: 16px; margin: 24px 0 10px; }
+  .content blockquote { font-size: 17px; padding: 12px 18px; margin: 28px 0; }
+}

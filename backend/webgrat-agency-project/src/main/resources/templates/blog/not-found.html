@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article not found — Webgrat Insights</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" th:href="@{/css/blog-ssr.css}">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="site-brand" href="/">Webgrat</a>
+    <nav class="site-nav">
+      <a href="/">Home</a>
+      <a href="/services">Services</a>
+      <a href="/case-studies">Case Studies</a>
+      <a href="/blog" class="active">Blog</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="blog-hero">
+    <div class="container" style="text-align: center;">
+      <h1>404</h1>
+      <p th:text="${message != null} ? ${message} : 'This article was not found.'">This article was not found.</p>
+      <p style="margin-top: 24px;">
+        <a class="back-link" href="/blog">← Back to all articles</a>
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© <span th:text="${#dates.format(#dates.createNow(),'yyyy')}">2026</span> Webgrat. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,539 @@
+.hero {
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 32px 0 44px;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(320px, 0.98fr);
+  align-items: center;
+  gap: clamp(48px, 7vw, 100px);
+  width: 100%;
+  padding-top: clamp(12px, 2vw, 24px);
+}
+
+.heroCopy {
+  max-width: 620px;
+  justify-self: start;
+  text-align: left;
+}
+
+.heroBadge {
+  align-self: flex-start;
+  margin-bottom: 18px;
+}
+
+.heroH1 {
+  font-size: clamp(42px, 4.2vw, 56px);
+  margin: 0 0 24px;
+  max-width: 12ch;
+  line-height: 1.12;
+}
+
+.heroAccent {
+  color: var(--color-primary);
+  font-style: italic;
+  font-weight: 800;
+}
+
+.heroSub {
+  font-size: 20px;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0;
+}
+
+.heroVisual {
+  position: relative;
+  justify-self: end;
+  width: 100%;
+  max-width: 500px;
+}
+
+.metricsScene {
+  position: relative;
+  min-height: 460px;
+}
+
+.metricsGlow {
+  position: absolute;
+  inset: 48px 40px;
+  border-radius: 32px;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(46, 247, 142, 0.18), transparent 46%),
+    radial-gradient(circle at 70% 68%, rgba(30, 95, 161, 0.18), transparent 50%);
+  filter: blur(8px);
+  animation: glowPulse 6s ease-in-out infinite alternate;
+}
+
+.metricsPanel {
+  position: absolute;
+  inset: 56px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 28px;
+  border-radius: 28px;
+  border: 1px solid rgba(46, 247, 142, 0.14);
+  background:
+    linear-gradient(180deg, rgba(14, 20, 37, 0.94), rgba(9, 13, 26, 0.96));
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+}
+
+.metricsPanel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent);
+  pointer-events: none;
+}
+
+.metricsEyebrow {
+  position: relative;
+  z-index: 1;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.metricsCore {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(46, 247, 142, 0.16), rgba(46, 247, 142, 0.02) 62%, transparent 70%);
+}
+
+.metricsCoreRing {
+  position: absolute;
+  inset: 18px;
+  border-radius: 50%;
+  border: 1px solid rgba(46, 247, 142, 0.22);
+  box-shadow:
+    0 0 0 10px rgba(46, 247, 142, 0.04),
+    0 0 40px rgba(46, 247, 142, 0.12);
+  animation: spinSlow 16s linear infinite;
+}
+
+.metricsCoreRing::before,
+.metricsCoreRing::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+}
+
+.metricsCoreRing::before {
+  top: 10px;
+  left: calc(50% - 5px);
+}
+
+.metricsCoreRing::after {
+  bottom: 10px;
+  left: calc(50% - 5px);
+}
+
+.metricsCoreValue {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-heading);
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--color-text-primary);
+}
+
+.metricsCoreLabel {
+  position: relative;
+  z-index: 1;
+  margin-top: 8px;
+  max-width: 150px;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+.metricCard {
+  position: absolute;
+  width: 210px;
+  padding: 18px 18px 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(46, 247, 142, 0.16);
+  background: rgba(13, 19, 35, 0.94);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.26);
+}
+
+.metricValue {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+}
+
+.metricLabel {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--color-text-primary);
+  margin-bottom: 8px;
+}
+
+.metricHint {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+.metricCard1 {
+  top: 0;
+  left: 0;
+  animation: floatCard1 6.8s ease-in-out infinite;
+}
+
+.metricCard2 {
+  top: 28px;
+  right: 0;
+  animation: floatCard2 7.4s ease-in-out infinite;
+}
+
+.metricCard3 {
+  bottom: 30px;
+  left: 18px;
+  animation: floatCard3 7.1s ease-in-out infinite;
+}
+
+.metricCard4 {
+  right: 10px;
+  bottom: 0;
+  animation: floatCard4 6.5s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0% { opacity: 0.6; transform: scale(0.98); }
+  100% { opacity: 1; transform: scale(1.03); }
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes floatCard1 {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(10px, -10px, 0); }
+}
+
+@keyframes floatCard2 {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(-10px, 12px, 0); }
+}
+
+@keyframes floatCard3 {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(12px, 10px, 0); }
+}
+
+@keyframes floatCard4 {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(-12px, -12px, 0); }
+}
+
+.missionSection {
+  padding: 56px 0 48px;
+}
+
+.missionVision {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.teamSection {
+  background-color: var(--color-surface);
+  padding-top: 20px;
+}
+
+.teamHeader {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.valuesSection {
+  padding: 56px 0 40px;
+}
+
+.valuesHeader {
+  margin-bottom: 28px;
+}
+
+.valuesHeader h2 {
+  margin-top: 18px;
+  margin-bottom: 0;
+}
+
+.mvCard {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 48px;
+}
+
+.mvLabel {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--color-primary);
+  margin-bottom: 24px;
+}
+
+.mvText {
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.teamCard {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 32px;
+  text-align: center;
+}
+
+.teamPhoto {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: var(--color-dark);
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--color-primary);
+}
+
+.teamName {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--color-text-primary);
+  margin-bottom: 4px;
+}
+
+.teamRole {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  margin-bottom: 16px;
+}
+
+.teamBio {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.teamSocial a {
+  color: var(--color-primary);
+  opacity: 0.7;
+}
+
+.teamSocial a:hover {
+  opacity: 1;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.valueBlock {
+  padding: 32px;
+  background-color: var(--color-surface);
+  border-radius: 12px;
+}
+
+.valueTitle {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--color-text-primary);
+  margin-bottom: 12px;
+}
+
+.valueDesc {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.ctaSection {
+  padding: 32px 0 64px;
+}
+
+.ctaContent {
+  max-width: 420px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transform: translateX(10px);
+}
+
+.ctaTitle {
+  margin-bottom: 24px;
+}
+
+.certsStrip {
+  background-color: var(--color-secondary);
+  padding: 48px 0;
+  text-align: center;
+}
+
+.certsTrack {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.certBadge {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 18px;
+  color: #FFFFFF;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+@media (max-width: 992px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .heroCopy {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .heroBadge {
+    align-self: center;
+  }
+
+  .heroH1 {
+    max-width: 15ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .heroSub {
+    margin: 0 auto;
+  }
+
+  .heroVisual {
+    justify-self: center;
+  }
+
+  .missionVision { grid-template-columns: 1fr; }
+  .teamGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 24px 0 28px;
+  }
+
+  .missionSection {
+    padding: 40px 0 32px;
+  }
+
+  .teamSection {
+    padding-top: 32px;
+  }
+
+  .valuesSection {
+    padding: 40px 0 32px;
+  }
+
+  .ctaSection {
+    padding: 28px 0 52px;
+  }
+
+  .ctaContent {
+    transform: none;
+  }
+
+  .metricsScene {
+    min-height: auto;
+    display: grid;
+    gap: 16px;
+  }
+
+  .metricsGlow {
+    inset: 40px 12px;
+  }
+
+  .metricsPanel {
+    position: relative;
+    inset: auto;
+    min-height: 240px;
+    margin-bottom: 8px;
+  }
+
+  .metricCard {
+    position: relative;
+    width: 100%;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    animation: none;
+  }
+
+  .heroH1 {
+    max-width: none;
+  }
+
+  .valuesGrid { grid-template-columns: 1fr; }
+  .teamGrid { grid-template-columns: 1fr; }
+}
