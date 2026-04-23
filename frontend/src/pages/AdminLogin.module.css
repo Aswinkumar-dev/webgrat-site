@@ -108,6 +108,14 @@
   font-weight: 400;
 }
 
+.hint {
+  margin-top: 8px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--color-text-muted);
+}
+
 .input {
   width: 100%;
   background-color: var(--color-dark);

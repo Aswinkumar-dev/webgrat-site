@@ -37,9 +37,15 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
 
                         // ── Public endpoints (no token needed) ──────────
+                        // The marketing blog page loads posts, tag tabs and
+                        // tag/category filters without any auth — these GETs
+                        // must stay open or visitors hit a 403 the moment
+                        // they click a tag.
                         .requestMatchers(HttpMethod.GET,
                                 "/api/blogs/published",
                                 "/api/blogs/slug/**",
+                                "/api/blogs/tag/**",
+                                "/api/blogs/category/**",
                                 "/api/categories",
                                 "/api/categories/**",
                                 "/api/tags",
@@ -65,6 +71,31 @@ public class SecurityConfig {
                         ).permitAll()
                         // Allow CORS preflight on every endpoint
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+
+                        // ── Profile self read: any logged-in user ──
+                        // A pending user still needs /me to succeed so the
+                        // React app can tell them their account is waiting
+                        // for super admin approval.
+                        .requestMatchers(HttpMethod.GET, "/api/auth/me").authenticated()
+
+                        // ── Admin-only write endpoints ─────────────────
+                        // Only users whose profiles.role is 'admin' or
+                        // 'super_admin' can create, update or delete
+                        // blog content, media, categories and tags.
+                        // Pending users are blocked here even if they have
+                        // a valid Supabase session.
+                        .requestMatchers(HttpMethod.POST, "/api/blogs/**", "/api/media/**",
+                                "/api/categories/**", "/api/tags/**",
+                                "/api/upload/**")
+                        .hasAnyRole("ADMIN", "SUPER_ADMIN")
+                        .requestMatchers(HttpMethod.PUT, "/api/blogs/**", "/api/media/**",
+                                "/api/categories/**", "/api/tags/**",
+                                "/api/upload/**")
+                        .hasAnyRole("ADMIN", "SUPER_ADMIN")
+                        .requestMatchers(HttpMethod.DELETE, "/api/blogs/**", "/api/media/**",
+                                "/api/categories/**", "/api/tags/**",
+                                "/api/upload/**")
+                        .hasAnyRole("ADMIN", "SUPER_ADMIN")
 
                         // ── Everything else requires a valid Supabase JWT ──
                         .anyRequest().authenticated()

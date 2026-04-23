@@ -275,22 +275,22 @@ export default function Home() {
           <ScrollReveal>
             <div className={styles.grid3}>
               <TestimonialCard
-                quote="Since working with Webgrat, our organic traffic has grown dramatically. Their SEO and content strategy is unlike anything we've tried before — and the results speak for themselves."
-                name="Sarah M."
-                company="E-commerce Brand"
-                resultBadge="+220% Organic Traffic"
+                quote="I have been working with Naresh and team since a few months and I am very impressed with the quality of their work. The team is professional, they are qualified, and they deliver! Very rare these days… It's an absolute pleasure to work with them."
+                name="Kuhaneshwary"
+                company="Kalai House of Lenin"
+                resultBadge="Social Media Marketing and Branding"
               />
               <TestimonialCard
-                quote="The AI automation workflows Webgrat built for us saved our team over 30 hours every single week. It's completely transformed how we operate day-to-day."
-                name="James K."
-                company="SaaS Startup"
-                resultBadge="30hrs/week Saved"
+                quote="I am very impressed with the quality of their work. The team is professional, they are qualified, and they deliver! Very rare these days... It's an absolute pleasure to work with them."
+                name="Vikram Devatha"
+                company="All Things Vedic"
+                resultBadge="Strategy and Growth"
               />
               <TestimonialCard
-                quote="Our Google Ads ROAS went from 1.8x to 4.2x in just three months. The team genuinely understands performance marketing at a deep level."
-                name="Priya R."
-                company="Retail Business"
-                resultBadge="4.2x ROAS Achieved"
+                quote="The team responds quickly and understands requirements clearly. The website development process was smooth, and the final outcome was clean, professional, and exactly what we needed."
+                name="Bharath"
+                company="Bharath Paints"
+                resultBadge="Web Development"
               />
             </div>
           </ScrollReveal>

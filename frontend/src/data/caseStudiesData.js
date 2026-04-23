@@ -259,6 +259,37 @@ export const CASE_STUDIES = [
     ]
   },
   {
+    slug: 'jj-rvec-hospital',
+    category: 'Healthcare',
+    clientType: 'Hospital',
+    title: 'Designing a Professional Healthcare Website to Build Trust & Improve Patient Access',
+    excerpt:
+      'We designed a clean, user-friendly website for J J RVEC Hospital to enhance their online presence, improve patient experience, and build digital trust.',
+    bigResult: 'Stronger',
+    resultLabel: 'Digital Trust & Access',
+    service: 'Website Design + UX Optimization + Information Architecture',
+    period: 'Project delivery',
+    readTime: '5 min read',
+    image: '',
+    imageAlt: 'J J RVEC Hospital website design and user experience highlights',
+    tags: ['Healthcare', 'Website Design', 'UX Optimization', 'Information Architecture'],
+    challenge:
+      'For hospitals, a website is often the first point of trust for patients. J J RVEC Hospital needed a professional digital presence that clearly communicates reliability while making information easy to access.',
+    solution: [
+      'Designed a clean and professional layout with a patient-centric approach.',
+      'Improved navigation clarity so users across age groups can find information quickly.',
+      'Optimized performance for fast loading and a smooth experience across devices.',
+      'Built a mobile-responsive interface to improve accessibility on both phone and desktop.',
+      'Structured departments and services clearly to reduce confusion and guide users effectively.'
+    ],
+    outcomes: [
+      'Delivered a website that creates stronger first impressions and immediate credibility.',
+      'Improved accessibility and browsing comfort for patients across devices.',
+      'Reduced friction in finding services, helping users move through the site with confidence.',
+      'Strengthened patient trust through a reassuring, professionalism-focused digital experience.'
+    ]
+  },
+  {
     slug: 'raasi-engineering',
     category: 'Manufacturing',
     clientType: 'Manufacturing Business',

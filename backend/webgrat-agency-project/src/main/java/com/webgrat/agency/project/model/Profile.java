@@ -23,9 +23,12 @@ public class Profile {
     @Column(nullable = false)
     private String email;
 
+    // Mirror the DB default (alter column role set default 'pending').
+    // Every new sign-up lands in 'pending' until the super admin manually
+    // promotes the row to 'admin' in the profiles table.
     @Builder.Default
     @Column(nullable = false)
-    private String role = "admin";
+    private String role = "pending";
 
     @Column(name = "full_name")
     private String fullName;
