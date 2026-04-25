@@ -1,3 +1,12 @@
+import nannilamNammidamThumbnail from '../assets/nannilam nammidam thumbnail.jpg'
+import navarenThumbnail from '../assets/navaren thumbnail.jpg'
+import senthurPropertyThumbnail from '../assets/senthur property thumbnail.jpg'
+import raasiEngineeringThumbnail from '../assets/raasi engineering thumbnail.jpg'
+import trichyPropertyThumbnail from '../assets/trichy property thumbnail.jpg'
+import aaPromotersThumbnail from '../assets/AA promoters thumbnail.jpg'
+import kalaiLeninThumbnail from '../assets/kalai lenin thumbnail.jpg'
+import tclcAiThumbnail from '../assets/tclc.ai thumbnail.jpeg'
+
 export const CASE_STUDIES = [
   {
     slug: 'nannilam-nammidam',
@@ -11,7 +20,7 @@ export const CASE_STUDIES = [
     service: 'Viral Content + Branding + Meta Ads',
     period: 'Ongoing',
     readTime: '6 min read',
-    image: '',
+    image: nannilamNammidamThumbnail,
     imageAlt: 'Nannilam Nammidam social media growth performance snapshot',
     tags: ['Real Estate', 'Content Marketing', 'Meta Ads', 'Branding'],
     challenge:
@@ -38,7 +47,7 @@ export const CASE_STUDIES = [
     service: 'Social Media Marketing + Meta Ads',
     period: 'Ongoing',
     readTime: '5 min read',
-    image: '',
+    image: senthurPropertyThumbnail,
     imageAlt: 'Senthur Properties campaign and social growth highlights',
     tags: ['Real Estate', 'Social Media Marketing', 'Meta Ads'],
     challenge:
@@ -67,7 +76,7 @@ export const CASE_STUDIES = [
     service: 'Social Media Marketing + Meta Ads',
     period: 'Ongoing',
     readTime: '5 min read',
-    image: '',
+    image: aaPromotersThumbnail,
     imageAlt: 'AA Promoters targeted advertising and lead quality performance',
     tags: ['Real Estate', 'Social Media Marketing', 'Meta Ads'],
     challenge:
@@ -96,7 +105,7 @@ export const CASE_STUDIES = [
     service: 'Meta Ads',
     period: 'Ongoing',
     readTime: '4 min read',
-    image: '',
+    image: trichyPropertyThumbnail,
     imageAlt: 'Trichy Properties Meta ads lead funnel performance view',
     tags: ['Real Estate', 'Meta Ads', 'Lead Generation'],
     challenge:
@@ -301,7 +310,7 @@ export const CASE_STUDIES = [
     service: 'Social Media + GBP Optimization + Meta Ads',
     period: 'Campaign cycle',
     readTime: '6 min read',
-    image: '',
+    image: raasiEngineeringThumbnail,
     imageAlt: 'Raasi Engineering lead generation performance snapshot',
     tags: ['Manufacturing', 'Meta Ads', 'Google Business', 'Lead Generation'],
     challenge:
@@ -359,7 +368,7 @@ export const CASE_STUDIES = [
     service: 'Branding + Social Media + Meta Ads',
     period: 'Ongoing',
     readTime: '6 min read',
-    image: '',
+    image: kalaiLeninThumbnail,
     imageAlt: 'Kalai Lenin ecommerce branding and performance ads strategy overview',
     tags: ['E-commerce', 'Branding', 'Social Media Marketing', 'Meta Ads'],
     challenge:
@@ -388,7 +397,7 @@ export const CASE_STUDIES = [
     service: 'Shopify + Cashfree + Pixel + Meta Ads',
     period: 'End-to-end rollout',
     readTime: '7 min read',
-    image: '',
+    image: navarenThumbnail,
     imageAlt: 'Navaren.shop ecommerce stack and performance campaign overview',
     tags: ['E-commerce', 'Shopify', 'Meta Ads', 'Facebook Pixel', 'Cashfree'],
     challenge:
@@ -449,7 +458,7 @@ export const CASE_STUDIES = [
     service: 'Social + Outbound + Performance Marketing',
     period: 'Ongoing',
     readTime: '7 min read',
-    image: '',
+    image: tclcAiThumbnail,
     imageAlt: 'TCLC.ai multi-channel lead generation system overview',
     tags: ['Saas & Tech', 'Lead Generation', 'LinkedIn', 'Cold Outreach'],
     challenge:

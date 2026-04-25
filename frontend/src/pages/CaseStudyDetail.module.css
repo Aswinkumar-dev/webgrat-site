@@ -60,8 +60,10 @@
 
 .coverImage {
   width: 100%;
-  height: clamp(260px, 40vw, 420px);
-  object-fit: cover;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  object-fit: contain;
+  background-color: rgba(8, 15, 26, 0.8);
   border-radius: 14px;
   border: 1px solid var(--color-border);
   margin-bottom: 24px;
@@ -69,7 +71,8 @@
 
 .imagePlaceholder {
   width: 100%;
-  height: clamp(260px, 40vw, 420px);
+  aspect-ratio: 16 / 9;
+  min-height: 260px;
   display: flex;
   align-items: center;
   justify-content: center;
