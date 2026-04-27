@@ -261,7 +261,11 @@
 
 @media (max-width: 768px) {
   .heroH1 {
-    font-size: 40px;
+    font-size: 28px !important;
+  }
+
+  .newsletterH3 {
+    font-size: 18px;
   }
 
   .formGrid {

@@ -30,13 +30,13 @@ export const CASE_STUDIES = [
     clientType: 'Local Real Estate Brand',
     title: 'How We Turned a Local Real Estate Brand into a 10M+ View Content Engine',
     excerpt:
-      'We scaled Nannilam Nammidam to 61K+ followers and 10M+ views using viral video content, strong branding, and targeted Meta ads.',
+      'We scaled Nannilam Nammidam to 60K+ followers and 10M+ views using viral video content, strong branding, and targeted Meta ads.',
     service: 'Viral Content + Branding + Meta Ads',
     period: 'Ongoing',
     readTime: '6 min read',
     image: nannilamNammidamThumbnail,
     imageAlt: 'Nannilam Nammidam social media growth performance snapshot',
-    tags: ['Real Estate', 'Content Marketing', 'Meta Ads', 'Branding'],
+    tags: ['Real Estate', 'Content Marketing', 'Branding'],
     challenge:
       'The brand struggled with inconsistent content, low audience engagement, and limited visibility across social platforms. There was no clear content strategy, weak brand positioning, and underutilized paid marketing channels, resulting in slow growth and minimal lead generation.',
     solution: [
@@ -351,7 +351,7 @@ export const CASE_STUDIES = [
     readTime: '5 min read',
     image: jjRvecThumbnail,
     imageAlt: 'J J RVEC Hospital website design and user experience highlights',
-    tags: ['Healthcare', 'Website Design', 'UX Optimization', 'Information Architecture'],
+    tags: ['Healthcare', 'Website Design', 'UX Optimization'],
     challenge:
       'For hospitals, a website is often the first point of trust for patients. J J RVEC Hospital needed a professional digital presence that clearly communicates reliability while making information easy to access.',
     solution: [
@@ -538,7 +538,7 @@ export const CASE_STUDIES = [
       'Launched Meta lead generation campaigns with precise student/aspirant targeting, conversion-focused copy, and continuous optimization.'
     ],
     outcomes: [
-      'Generated 120+ qualified leads with ₹10,500 ad spend.',
+      'Generated 110+ qualified leads with ₹10,500 ad spend.',
       'Achieved cost-efficient lead acquisition through funnel-based ad execution.',
       'Improved engagement and campaign performance with a strong image + video creative mix.',
       'Built a repeatable testing-and-optimization loop aligned to student intent.'

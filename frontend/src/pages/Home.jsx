@@ -105,26 +105,32 @@ export default function Home() {
       </section>
 
       <div className={styles.logosStrip}>
-        <div className={`container ${styles.logosInner}`}>
-          <div className={styles.logosLabel}>Trusted by</div>
-          <div className={styles.logosTrack}>
+        <div className={styles.logosLabel}>Trusted by</div>
+        <div className={styles.logosTrack}>
             <span className={styles.logoItem}>Nannilam Nammidam</span>
-            <span className={styles.logoItem}>Little Steps Kids Clinic</span>
+            <span className={styles.logoItem}>Little Stepz Kids Clinic</span>
             <span className={styles.logoItem}>All Things Vedic</span>
             <span className={styles.logoItem}>Glanceify Academy</span>
             <span className={styles.logoItem}>Raasi Engineering</span>
-            <span className={styles.logoItem}>Tclc.ai </span>
+            <span className={styles.logoItem}>Tclc.ai</span>
             <span className={styles.logoItem}>Kalai Linen</span>
-            {/* Duplicated for infinite scroll */}
+            <span className={styles.logoItem}>Vaishnah Naturals</span>
+            <span className={styles.logoItem}>Senthoor Properties</span>
+            <span className={styles.logoItem}>AA Promoters</span>
+            <span className={styles.logoItem}>Astro Naveen</span>
+            {/* Duplicated for seamless infinite scroll */}
             <span className={styles.logoItem}>Nannilam Nammidam</span>
-            <span className={styles.logoItem}>Little Steps Kids Clinic</span>
+            <span className={styles.logoItem}>Little Stepz Kids Clinic</span>
             <span className={styles.logoItem}>All Things Vedic</span>
             <span className={styles.logoItem}>Glanceify Academy</span>
             <span className={styles.logoItem}>Raasi Engineering</span>
-            <span className={styles.logoItem}>Tclc.ai </span>
+            <span className={styles.logoItem}>Tclc.ai</span>
             <span className={styles.logoItem}>Kalai Linen</span>
+            <span className={styles.logoItem}>Vaishnah Naturals</span>
+            <span className={styles.logoItem}>Senthoor Properties</span>
+            <span className={styles.logoItem}>AA Promoters</span>
+            <span className={styles.logoItem}>Astro Naveen</span>
           </div>
-        </div>
       </div>
 
       {/* Services Section */}
