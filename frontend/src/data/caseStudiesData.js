@@ -1,4 +1,5 @@
 import nannilamNammidamThumbnail from '../assets/nannilam nammidam thumbnail.jpg'
+import nannilamNammidamYoutubeThumbnail from '../assets/nannilam nammidam youtube thumbnail.jpeg'
 import navarenThumbnail from '../assets/navaren thumbnail.jpg'
 import senthurPropertyThumbnail from '../assets/senthur property thumbnail.jpg'
 import raasiEngineeringThumbnail from '../assets/raasi engineering thumbnail.jpg'
@@ -8,6 +9,7 @@ import kalaiLeninThumbnail from '../assets/kalai lenin thumbnail.jpg'
 import kalaiLeninBrandingThumbnail from '../assets/kalai lenin branding thumbnail.jpg'
 import tclcAiThumbnail from '../assets/tclc.ai thumbnail.jpeg'
 import drVigneshThumbnail from '../assets/dr.vignesh thumbnail.jpg'
+import drVigneshYoutubeThumbnail from '../assets/dr vignesh youtube thumbnail.jpg'
 import bharathPaintsThumbnail from '../assets/bharath paints thumbnail.jpg'
 import allThingsVedicThumbnail from '../assets/all things vedic thumbnail.jpg'
 import jjRvecThumbnail from '../assets/jj rvec thumbnail.jpg'
@@ -22,6 +24,9 @@ export const CASE_STUDIES = [
   {
     slug: 'nannilam-nammidam',
     category: 'Real Estate',
+    clientGroup: 'nannilam-nammidam',
+    clientName: 'Nannilam Nammidam',
+    serviceTrack: 'Viral Content + Branding + Meta Ads',
     clientType: 'Local Real Estate Brand',
     title: 'How We Turned a Local Real Estate Brand into a 10M+ View Content Engine',
     excerpt:
@@ -47,6 +52,39 @@ export const CASE_STUDIES = [
       'Generated a consistent flow of organic leads and inbound inquiries.',
       'Improved audience trust, retention, and overall brand authority.',
       'Created a scalable system for ongoing content and marketing growth.'
+    ]
+  },
+  {
+    slug: 'nannilam-nammidam-youtube',
+    category: 'Real Estate',
+    clientGroup: 'nannilam-nammidam',
+    clientName: 'Nannilam Nammidam',
+    serviceTrack: 'YouTube Growth',
+    clientType: 'Local Real Estate Brand',
+    title: 'How We Grew Nannilam Nammidam\'s YouTube Channel with Consistent Long-Form Content',
+    excerpt:
+      'We helped Nannilam Nammidam build a strong YouTube presence through strategic video content, optimized thumbnails, and consistent publishing to drive long-term channel growth.',
+    service: 'YouTube Content Strategy + Video Production',
+    period: 'Ongoing',
+    readTime: '5 min read',
+    image: nannilamNammidamYoutubeThumbnail,
+    imageAlt: 'Nannilam Nammidam YouTube channel growth and content strategy overview',
+    tags: ['Real Estate', 'YouTube', 'Content Strategy', 'Video Production'],
+    challenge:
+      'YouTube growth for a regional real estate brand requires more than just uploading videos. Nannilam Nammidam needed a clear content direction, watch-time-optimized formats, and consistent publishing to compete with larger channels and build a loyal subscriber base.',
+    solution: [
+      'Developed a YouTube-specific content strategy focused on property tours, local market insights, and buyer education.',
+      'Designed high-CTR thumbnails and compelling titles to improve click-through rates from search and recommendations.',
+      'Structured videos with strong hooks, clear storytelling, and calls-to-action to maximize watch time and retention.',
+      'Maintained a consistent publishing schedule to signal channel reliability to the YouTube algorithm.',
+      'Analysed performance data to identify top-performing content themes and doubled down on what worked.'
+    ],
+    outcomes: [
+      'Achieved consistent channel growth with increasing views and watch time over time.',
+      'Improved click-through rates through optimised thumbnails and title strategies.',
+      'Built a loyal subscriber base actively interested in local real estate content.',
+      'Strengthened brand authority as a trusted real estate voice in the region.',
+      'Created a repeatable content system for sustained long-term YouTube growth.'
     ]
   },
   {
@@ -241,6 +279,9 @@ export const CASE_STUDIES = [
   {
     slug: 'little-steps-kidz-clinic',
     category: 'Healthcare',
+    clientGroup: 'dr-vignesh',
+    clientName: 'Dr. Vignesh',
+    serviceTrack: 'Personal Branding + Short-Form Content',
     clientType: 'Pediatric Clinic',
     title: 'How We Built a Doctor’s Personal Brand to 1.5M+ Views & 7.5K Followers in Just 20 Videos',
     excerpt:
@@ -263,6 +304,39 @@ export const CASE_STUDIES = [
       'Gained 7,500+ followers.',
       'Reached 1.5M+ total views across Instagram and YouTube in just 20 videos.',
       'Built a strong emotional connection with the parent audience.'
+    ]
+  },
+  {
+    slug: 'little-steps-kidz-clinic-youtube',
+    category: 'Healthcare',
+    clientGroup: 'dr-vignesh',
+    clientName: 'Dr. Vignesh',
+    serviceTrack: 'YouTube Growth',
+    clientType: 'Pediatric Clinic',
+    title: 'Growing a Pediatric Doctor\'s YouTube Channel Through Educational Long-Form Content',
+    excerpt:
+      'We helped Dr. Vignesh build a trusted YouTube presence by producing educational, parent-focused long-form videos that drive sustained channel growth and brand authority.',
+    service: 'YouTube Content Strategy + Video Production',
+    period: 'Ongoing',
+    readTime: '5 min read',
+    image: drVigneshYoutubeThumbnail,
+    imageAlt: 'Dr. Vignesh YouTube channel growth and educational content overview',
+    tags: ['Healthcare', 'YouTube', 'Content Strategy', 'Personal Branding'],
+    challenge:
+      'YouTube for healthcare professionals demands a fine balance between credibility and accessibility. Dr. Vignesh needed a content approach that built authority, retained viewers, and grew a loyal parent audience without compromising the trust that a medical brand requires.',
+    solution: [
+      'Developed a YouTube content strategy focused on parent-friendly health topics, child care advice, and myth-busting medical content.',
+      'Crafted video structures with strong educational hooks, clear explanations, and relatable delivery to improve viewer retention.',
+      'Designed professional thumbnails and titles that build trust while improving click-through rates.',
+      'Maintained consistent publishing to grow algorithmic reach and build subscriber loyalty over time.',
+      'Tracked performance metrics to refine content themes and formats based on what resonated most with the audience.'
+    ],
+    outcomes: [
+      'Grew a loyal subscriber base of parents actively seeking trusted pediatric guidance.',
+      'Achieved strong watch-time performance through educational, high-retention video formats.',
+      'Strengthened Dr. Vignesh\'s authority as a go-to pediatric expert on YouTube.',
+      'Increased brand visibility and inbound consultation inquiries through organic channel growth.',
+      'Built a scalable content system delivering consistent long-term YouTube growth.'
     ]
   },
   {

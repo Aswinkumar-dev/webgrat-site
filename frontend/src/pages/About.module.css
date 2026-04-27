@@ -504,9 +504,7 @@
   }
 
   .metricsScene {
-    min-height: auto;
-    display: grid;
-    gap: 16px;
+    min-height: 420px;
   }
 
   .metricsGlow {
@@ -514,20 +512,35 @@
   }
 
   .metricsPanel {
-    position: relative;
-    inset: auto;
-    min-height: 240px;
-    margin-bottom: 8px;
+    inset: 46px 28px;
+  }
+
+  .metricsCore {
+    width: 170px;
+    height: 170px;
+  }
+
+  .metricsCoreValue {
+    font-size: 28px;
   }
 
   .metricCard {
-    position: relative;
-    width: 100%;
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
-    animation: none;
+    width: 148px;
+    padding: 12px 13px;
+  }
+
+  .metricValue {
+    font-size: 22px;
+    margin-bottom: 6px;
+  }
+
+  .metricLabel {
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+
+  .metricHint {
+    font-size: 11px;
   }
 
   .heroH1 {

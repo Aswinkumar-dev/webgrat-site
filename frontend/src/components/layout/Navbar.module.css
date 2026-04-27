@@ -39,17 +39,18 @@
   text-decoration: none;
 }
 
+.logoImg {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
 .logoBrand {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 4px;
-}
-
-.logoMark {
-  width: 48px;
-  height: 28px;
-  fill: var(--color-primary);
 }
 
 .logoText {
@@ -230,5 +231,9 @@
   .mobileDrawer {
     display: flex;
     max-width: none;
+  }
+
+  .logoImg {
+    height: 52px;
   }
 }

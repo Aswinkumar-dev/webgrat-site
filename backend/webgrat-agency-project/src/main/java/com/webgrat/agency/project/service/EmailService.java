@@ -235,7 +235,7 @@ public class EmailService {
                 </div>
                 <div class="footer">
                   You can unsubscribe anytime.<br>
-                  © 2026 Webgrat. All rights reserved.
+                  © 2023 Webgrat. All rights reserved.
                 </div>
               </div>
             </body>
