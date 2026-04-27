@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useMemo } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import SEOHead from '../seo/SEOHead'
 import ScrollReveal from '../components/ui/ScrollReveal'
@@ -8,6 +8,12 @@ import styles from './CaseStudyDetail.module.css'
 export default function CaseStudyDetail() {
   const { slug } = useParams()
   const caseStudy = CASE_STUDIES.find((item) => item.slug === slug)
+  const relatedServices = useMemo(() => {
+    if (!caseStudy?.clientGroup) return []
+    return CASE_STUDIES.filter(
+      (item) => item.clientGroup === caseStudy.clientGroup && item.slug !== caseStudy.slug,
+    )
+  }, [caseStudy])
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -39,7 +45,6 @@ export default function CaseStudyDetail() {
             <header className={styles.header}>
               <div className={styles.metaRow}>
                 <span className={styles.category}>{caseStudy.category}</span>
-                <span className={styles.readTime}>{caseStudy.readTime}</span>
               </div>
               <h1 className={styles.title}>{caseStudy.title}</h1>
               <p className={styles.subtitle}>{caseStudy.excerpt}</p>
@@ -75,27 +80,36 @@ export default function CaseStudyDetail() {
               </ul>
             </div>
 
-            <div className={styles.kpiRow}>
-              <div className={styles.kpiCard}>
-                <span className={styles.kpiValue}>{caseStudy.bigResult}</span>
-                <span className={styles.kpiLabel}>{caseStudy.resultLabel}</span>
-              </div>
-              <div className={styles.kpiCard}>
-                <span className={styles.kpiValue}>{caseStudy.period}</span>
-                <span className={styles.kpiLabel}>Timeframe</span>
-              </div>
-              <div className={styles.kpiCard}>
-                <span className={styles.kpiValue}>{caseStudy.clientType}</span>
-                <span className={styles.kpiLabel}>Client Type</span>
-              </div>
-            </div>
+            {relatedServices.length > 0 && (
+              <section className={styles.relatedServices}>
+                <h3 className={styles.relatedTitle}>
+                  More services for {caseStudy.clientName || 'this client'}
+                </h3>
+                <div className={styles.relatedGrid}>
+                  {relatedServices.map((service) => (
+                    <Link
+                      key={service.slug}
+                      to={`/case-studies/${service.slug}`}
+                      className={styles.relatedCard}
+                    >
+                      <span className={styles.relatedServiceTrack}>
+                        {service.serviceTrack || service.service}
+                      </span>
+                      <span className={styles.relatedCardTitle}>{service.title}</span>
+                    </Link>
+                  ))}
+                </div>
+              </section>
+            )}
 
+            <div className={styles.categoryCtaBox}>
               <Link
                 to={`/case-studies?category=${encodeURIComponent(caseStudy.category)}`}
-                className={styles.backLink}
+                className={styles.categoryCtaLink}
               >
                 View more in {caseStudy.category}
               </Link>
+            </div>
           </ScrollReveal>
         </div>
       </article>

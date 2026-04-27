@@ -1,0 +1,60 @@
+name: Keep Render backend awake
+
+# ──────────────────────────────────────────────────────────────────────
+#  Render's free Web Services sleep after ~15 min of no HTTP traffic.
+#  This workflow pings the backend's health endpoint every 14 minutes
+#  so it stays warm. GitHub Actions cron has 5-min granularity and can
+#  be delayed during peak hours, hence 14 (not 15) min to stay inside
+#  Render's idle window.
+#
+#  Setup (one-time):
+#    1. Push this file to GitHub on the main branch.
+#    2. Go to: Repo → Settings → Secrets and variables → Actions →
+#       Variables tab → New repository variable
+#       Name : BACKEND_URL
+#       Value: https://<your-render-service>.onrender.com
+#       (no trailing slash)
+#    3. The job runs automatically. Trigger it manually any time from
+#       Actions → "Keep Render backend awake" → Run workflow.
+# ──────────────────────────────────────────────────────────────────────
+
+on:
+  schedule:
+    - cron: '*/14 * * * *'
+  workflow_dispatch:
+
+# Don't pile up overlapping runs if a previous ping is somehow still going.
+concurrency:
+  group: keep-alive
+  cancel-in-progress: false
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Ping /api/blogs/health
+        env:
+          BACKEND_URL: ${{ vars.BACKEND_URL }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "${BACKEND_URL:-}" ]; then
+            echo "::error::Repository variable BACKEND_URL is not set."
+            echo "Add it under: Settings → Secrets and variables → Actions → Variables."
+            exit 1
+          fi
+
+          URL="${BACKEND_URL%/}/api/blogs/health"
+          echo "Pinging $URL"
+
+          # Allow up to 60 s for a cold-start wake-up; retry twice in case
+          # the very first request races with Render's container boot.
+          curl -fsS --max-time 60 --retry 2 --retry-delay 10 \
+               -o response.txt -w "HTTP %{http_code} in %{time_total}s\n" \
+               "$URL"
+
+          echo "─── response body ───"
+          cat response.txt
+          echo
+          echo "Backend is awake ✓"

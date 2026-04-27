@@ -61,12 +61,12 @@ export default function Footer() {
           <div className={styles.column}>
             <h4 className={styles.label}>Services</h4>
             <div className={styles.linkList}>
-              <Link to="/services#ai-automation" className={styles.link}>AI Automation</Link>
-              <Link to="/services#seo" className={styles.link}>SEO</Link>
-              <Link to="/services#ppc" className={styles.link}>PPC Advertising</Link>
               <Link to="/services#social-media" className={styles.link}>Social Media Marketing</Link>
               <Link to="/services#content" className={styles.link}>Content Marketing</Link>
               <Link to="/services#web" className={styles.link}>Web Design</Link>
+              <Link to="/services#ppc" className={styles.link}>PPC Advertising</Link>
+              <Link to="/services#seo" className={styles.link}>SEO</Link>
+              <Link to="/services#ai-automation" className={styles.link}>AI Automation</Link>
             </div>
           </div>
 

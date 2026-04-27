@@ -31,7 +31,7 @@
 }
 
 .title {
-  font-size: clamp(34px, 4.1vw, 52px);
+  font-size: clamp(26px, 3.2vw, 42px);
   margin-bottom: 16px;
 }
 
@@ -141,6 +141,101 @@
   margin-bottom: 10px;
 }
 
+.content ul:last-child {
+  margin-bottom: 2px;
+}
+
+.content ul:last-child li:last-child {
+  margin-bottom: 0;
+}
+
+.relatedServices {
+  max-width: 860px;
+  margin: 48px auto 0;
+  padding: 0;
+}
+
+.relatedTitle {
+  font-size: 22px;
+  margin: -6px 0 20px;
+  text-align: center;
+}
+
+.relatedGrid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.relatedCard {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 24px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background-color: rgba(8, 15, 26, 0.7);
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+  width: fit-content;
+  min-width: 280px;
+  max-width: 100%;
+}
+
+.relatedCard:hover {
+  border-color: rgba(46, 247, 142, 0.45);
+  transform: translateY(-1px);
+}
+
+.relatedServiceTrack {
+  color: var(--color-primary);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.relatedCardTitle {
+  color: var(--color-text-primary);
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.categoryCtaBox {
+  margin: 53px auto 0;
+  max-width: 860px;
+  display: flex;
+  justify-content: center;
+}
+
+.categoryCtaLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 12px 26px;
+  border-radius: 12px;
+  border: 1px solid rgba(46, 247, 142, 0.35);
+  background: linear-gradient(180deg, rgba(46, 247, 142, 0.12), rgba(46, 247, 142, 0.06));
+  color: var(--color-primary);
+  font-weight: 700;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.categoryCtaLink:hover {
+  transform: translateY(-1px);
+  border-color: rgba(46, 247, 142, 0.6);
+  box-shadow: 0 10px 28px rgba(46, 247, 142, 0.14);
+}
+
+.categoryCtaLink:focus-visible {
+  outline: 2px solid rgba(46, 247, 142, 0.65);
+  outline-offset: 2px;
+}
+
 .backLink {
   display: block;
   width: fit-content;
@@ -167,7 +262,36 @@
 }
 
 @media (max-width: 768px) {
+  .title {
+    font-size: 18px !important;
+  }
+
+  .subtitle {
+    font-size: 13px;
+  }
+
   .content {
     font-size: 16px;
+  }
+
+  .categoryCtaBox {
+    margin-top: 36px;
+  }
+
+  .categoryCtaLink {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .relatedGrid {
+    align-items: stretch;
+  }
+
+  .relatedCard {
+    width: 100%;
+  }
+
+  .relatedTitle {
+    font-size: 20px;
   }
 }

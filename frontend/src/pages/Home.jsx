@@ -137,31 +137,13 @@ export default function Home() {
           />
           <ScrollReveal>
             <div className={styles.servicesGrid}>
-              <ServiceCard
-                icon={Icons.Circuit}
-                title="AI Automation & Workflows"
-                description="Eliminate repetitive tasks and streamline operations with intelligent automation workflows built for your business."
-                linkTo="/services#ai-automation"
-              />
-              <ServiceCard
-                icon={Icons.Search}
-                title="Search Engine Optimisation"
-                description="Rank higher on Google and drive consistent organic traffic that converts into real customers and revenue."
-                linkTo="/services#seo"
-              />
-              <ServiceCard
-                icon={Icons.Click}
-                title="PPC Advertising"
-                description="Maximise your ad spend with precision-targeted Google and Meta campaigns engineered for maximum ROI."
-                linkTo="/services#ppc"
-              />
-              <ServiceCard
+            <ServiceCard
                 icon={Icons.Social}
                 title="Social Media Marketing"
                 description="Build brand authority, grow your following, and engage your audience across all major social platforms."
                 linkTo="/services#social-media"
               />
-              <ServiceCard
+               <ServiceCard
                 icon={Icons.Document}
                 title="Content & Performance Marketing"
                 description="Strategic content that ranks on Google, converts visitors, and positions your brand as the market leader."
@@ -172,6 +154,24 @@ export default function Home() {
                 title="Web Design & Development"
                 description="High-performance, visually compelling websites built for speed, UX, and measurable business results."
                 linkTo="/services#web"
+              />
+              <ServiceCard
+                icon={Icons.Click}
+                title="PPC Advertising"
+                description="Maximise your ad spend with precision-targeted Google and Meta campaigns engineered for maximum ROI."
+                linkTo="/services#ppc"
+              />
+              <ServiceCard
+                icon={Icons.Search}
+                title="Search Engine Optimisation"
+                description="Rank higher on Google and drive consistent organic traffic that converts into real customers and revenue."
+                linkTo="/services#seo"
+              />
+              <ServiceCard
+                icon={Icons.Circuit}
+                title="AI Automation & Workflows"
+                description="Eliminate repetitive tasks and streamline operations with intelligent automation workflows built for your business."
+                linkTo="/services#ai-automation"
               />
             </div>
           </ScrollReveal>

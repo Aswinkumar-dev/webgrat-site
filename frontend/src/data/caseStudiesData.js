@@ -5,7 +5,18 @@ import raasiEngineeringThumbnail from '../assets/raasi engineering thumbnail.jpg
 import trichyPropertyThumbnail from '../assets/trichy property thumbnail.jpg'
 import aaPromotersThumbnail from '../assets/AA promoters thumbnail.jpg'
 import kalaiLeninThumbnail from '../assets/kalai lenin thumbnail.jpg'
+import kalaiLeninBrandingThumbnail from '../assets/kalai lenin branding thumbnail.jpg'
 import tclcAiThumbnail from '../assets/tclc.ai thumbnail.jpeg'
+import drVigneshThumbnail from '../assets/dr.vignesh thumbnail.jpg'
+import bharathPaintsThumbnail from '../assets/bharath paints thumbnail.jpg'
+import allThingsVedicThumbnail from '../assets/all things vedic thumbnail.jpg'
+import jjRvecThumbnail from '../assets/jj rvec thumbnail.jpg'
+import astroNaveenThumbnail from '../assets/naveen astro thumbnail.jpg'
+import agastiyarNadiAstroThumbnail from '../assets/agastiyar nadi astro thumbnail.jpg'
+import sunwinThumbnail from '../assets/sunwin thumbnail.jpg'
+import glanceifyAcademyThumbnail from '../assets/glanceify academy thumbnail.jpg'
+import glanceifySocialMediaMarketingThumbnail from '../assets/glanceify social media marketing.jpg'
+import deeprootThumbnail from '../assets/deeproot thumbnail.jpg'
 
 export const CASE_STUDIES = [
   {
@@ -15,8 +26,6 @@ export const CASE_STUDIES = [
     title: 'How We Turned a Local Real Estate Brand into a 10M+ View Content Engine',
     excerpt:
       'We scaled Nannilam Nammidam to 61K+ followers and 10M+ views using viral video content, strong branding, and targeted Meta ads.',
-    bigResult: '10M+',
-    resultLabel: 'Views (Instagram + YouTube)',
     service: 'Viral Content + Branding + Meta Ads',
     period: 'Ongoing',
     readTime: '6 min read',
@@ -24,15 +33,20 @@ export const CASE_STUDIES = [
     imageAlt: 'Nannilam Nammidam social media growth performance snapshot',
     tags: ['Real Estate', 'Content Marketing', 'Meta Ads', 'Branding'],
     challenge:
-      'We transformed this brand into a high-engagement content machine.',
+      'The brand struggled with inconsistent content, low audience engagement, and limited visibility across social platforms. There was no clear content strategy, weak brand positioning, and underutilized paid marketing channels, resulting in slow growth and minimal lead generation.',
     solution: [
-      'Generated 61K+ followers.',
-      'Created 35 high-performing videos.',
-      'Achieved 10M+ total views (Instagram + YouTube).',
-      'Focus: Viral content + strong branding + targeted Meta ads.'
+      'Developed a content framework focused on viral hooks, storytelling, and audience psychology.',
+      'Designed a consistent brand identity to improve recognition and trust.',
+      'Produced high-quality short-form videos tailored for platform algorithms.',
+      'Implemented data-driven Meta ad campaigns to amplify top-performing content.',
+      'Continuously optimized creatives based on performance insights and audience behavior.'
     ],
     outcomes: [
-      'Massive brand visibility and organic lead flow.'
+      'Achieved exponential growth in reach and engagement across platforms.',
+      'Built a strong and recognizable personal brand in a competitive space.',
+      'Generated a consistent flow of organic leads and inbound inquiries.',
+      'Improved audience trust, retention, and overall brand authority.',
+      'Created a scalable system for ongoing content and marketing growth.'
     ]
   },
   {
@@ -42,8 +56,6 @@ export const CASE_STUDIES = [
     title: 'Building Consistent Lead Flow for a Real Estate Brand with Social Media & Ads',
     excerpt:
       'We helped Senthur Properties grow their online presence and generate steady inquiries through strategic social media marketing and Meta ad campaigns.',
-    bigResult: 'Steady',
-    resultLabel: 'Inbound Inquiries',
     service: 'Social Media Marketing + Meta Ads',
     period: 'Ongoing',
     readTime: '5 min read',
@@ -71,8 +83,6 @@ export const CASE_STUDIES = [
     title: 'Improving Lead Quality with Targeted Ads & Structured Content Strategy',
     excerpt:
       'We positioned AA Promoters with professional branding and precision-targeted Meta ads to attract more relevant and high-intent buyers.',
-    bigResult: 'Higher',
-    resultLabel: 'Lead Quality',
     service: 'Social Media Marketing + Meta Ads',
     period: 'Ongoing',
     readTime: '5 min read',
@@ -100,8 +110,6 @@ export const CASE_STUDIES = [
     title: 'Driving Consistent Real Estate Leads with Performance-Driven Meta Ads',
     excerpt:
       'We implemented a focused Meta ads strategy to generate reliable and cost-effective leads for Trichy Properties.',
-    bigResult: 'Consistent',
-    resultLabel: 'Lead Generation',
     service: 'Meta Ads',
     period: 'Ongoing',
     readTime: '4 min read',
@@ -128,12 +136,10 @@ export const CASE_STUDIES = [
     title: 'Maximizing ROI with High-Performance Real Estate Ad Campaigns',
     excerpt:
       'We helped Sunwin Property generate qualified prospects using optimized Meta ads focused on conversions and cost efficiency.',
-    bigResult: 'Higher',
-    resultLabel: 'ROI Efficiency',
     service: 'Meta Ads',
     period: 'Ongoing',
     readTime: '4 min read',
-    image: '',
+    image: sunwinThumbnail,
     imageAlt: 'Sunwin Property performance campaign dashboard overview',
     tags: ['Real Estate', 'Meta Ads', 'ROI'],
     challenge:
@@ -157,12 +163,10 @@ export const CASE_STUDIES = [
     title: 'How We Increased Webinar Conversions with Smart Ad Strategy & High-Impact Creatives',
     excerpt:
       'We helped All Things Vedic boost webinar registrations using competitor analysis, high-converting thumbnails, and targeted Meta ad campaigns.',
-    bigResult: 'Higher',
-    resultLabel: 'Webinar Registrations',
     service: 'Competitor Analysis + Creative + Meta Ads',
     period: 'Ongoing',
     readTime: '6 min read',
-    image: '',
+    image: allThingsVedicThumbnail,
     imageAlt: 'All Things Vedic webinar campaign performance and creatives',
     tags: ['Astrology', 'Meta Ads', 'Webinar Funnel', 'Creative Strategy'],
     challenge:
@@ -186,12 +190,10 @@ export const CASE_STUDIES = [
     title: 'Scaling an Astrology Brand with Consistent Content & Performance Marketing',
     excerpt:
       'We helped Agasthiyar Nadi Astro grow their visibility and generate leads through strategic social media marketing and Meta ads.',
-    bigResult: 'Consistent',
-    resultLabel: 'Lead Generation',
     service: 'Social Media Marketing + Meta Ads',
     period: 'Ongoing',
     readTime: '5 min read',
-    image: '',
+    image: agastiyarNadiAstroThumbnail,
     imageAlt: 'Agasthiyar Nadi Astro social and Meta campaign performance view',
     tags: ['Astrology', 'Social Media Marketing', 'Meta Ads', 'Lead Generation'],
     challenge:
@@ -216,12 +218,10 @@ export const CASE_STUDIES = [
     title: 'Building Authority for an Astrology Brand through LinkedIn & Instagram Content',
     excerpt:
       'We helped Naveen Astro strengthen personal branding and audience engagement through consistent LinkedIn and Instagram marketing.',
-    bigResult: 'Stronger',
-    resultLabel: 'Brand Authority',
     service: 'Instagram + LinkedIn Marketing',
     period: 'Ongoing',
     readTime: '5 min read',
-    image: '',
+    image: astroNaveenThumbnail,
     imageAlt: 'Naveen Astro LinkedIn and Instagram growth strategy snapshot',
     tags: ['Astrology', 'Instagram', 'LinkedIn', 'Personal Branding'],
     challenge:
@@ -242,15 +242,13 @@ export const CASE_STUDIES = [
     slug: 'little-steps-kidz-clinic',
     category: 'Healthcare',
     clientType: 'Pediatric Clinic',
-    title: 'How We Built a Doctor’s Personal Brand to 2M+ Views & 7.5K Followers in Just 20 Videos',
+    title: 'How We Built a Doctor’s Personal Brand to 1.5M+ Views & 7.5K Followers in Just 20 Videos',
     excerpt:
-      'We helped Little Steps Kidz Clinic grow its digital presence through personal branding, generating 7,500+ followers and over 2M views with just 20 videos across Instagram and YouTube.',
-    bigResult: '2M+',
-    resultLabel: 'Views in 20 Videos',
+      'We helped Little Steps Kidz Clinic grow its digital presence through personal branding, generating 7,500+ followers and over 1.5M+ views with just 20 videos across Instagram and YouTube.',
     service: 'Personal Branding + Short-Form Content',
     period: '20 videos',
     readTime: '6 min read',
-    image: '',
+    image: drVigneshThumbnail,
     imageAlt: 'Little Steps Kidz Clinic social content growth metrics',
     tags: ['Healthcare', 'Personal Branding', 'Instagram', 'YouTube'],
     challenge:
@@ -263,7 +261,7 @@ export const CASE_STUDIES = [
     ],
     outcomes: [
       'Gained 7,500+ followers.',
-      'Reached 2M+ total views across Instagram and YouTube in just 20 videos.',
+      'Reached 1.5M+ total views across Instagram and YouTube in just 20 videos.',
       'Built a strong emotional connection with the parent audience.'
     ]
   },
@@ -274,12 +272,10 @@ export const CASE_STUDIES = [
     title: 'Designing a Professional Healthcare Website to Build Trust & Improve Patient Access',
     excerpt:
       'We designed a clean, user-friendly website for J J RVEC Hospital to enhance their online presence, improve patient experience, and build digital trust.',
-    bigResult: 'Stronger',
-    resultLabel: 'Digital Trust & Access',
     service: 'Website Design + UX Optimization + Information Architecture',
     period: 'Project delivery',
     readTime: '5 min read',
-    image: '',
+    image: jjRvecThumbnail,
     imageAlt: 'J J RVEC Hospital website design and user experience highlights',
     tags: ['Healthcare', 'Website Design', 'UX Optimization', 'Information Architecture'],
     challenge:
@@ -305,8 +301,6 @@ export const CASE_STUDIES = [
     title: 'How We Generated 250+ Leads for a Manufacturing Business with Just ₹2000 Ad Spend',
     excerpt:
       'We helped Raasi Engineering generate over 250 qualified leads using social media marketing, Google Business optimization, and highly cost-efficient Meta ads.',
-    bigResult: '250+',
-    resultLabel: 'Leads Generated',
     service: 'Social Media + GBP Optimization + Meta Ads',
     period: 'Campaign cycle',
     readTime: '6 min read',
@@ -334,12 +328,10 @@ export const CASE_STUDIES = [
     title: 'Building a Strong Digital Foundation for a Manufacturing Brand',
     excerpt:
       'We helped Bharath Paints establish a professional online presence through website development and Google Business optimization.',
-    bigResult: 'Stronger',
-    resultLabel: 'Digital Presence',
     service: 'Website Development + Google Business Optimization',
     period: 'Implementation phase',
     readTime: '5 min read',
-    image: '',
+    image: bharathPaintsThumbnail,
     imageAlt: 'Bharath Paints website and Google Business optimization highlights',
     tags: ['Manufacturing', 'Website Development', 'Google Business', 'Local SEO'],
     challenge:
@@ -359,12 +351,13 @@ export const CASE_STUDIES = [
   {
     slug: 'kalai-lenin-ecommerce',
     category: 'E-commerce',
+    clientGroup: 'kalai-lenin',
+    clientName: 'Kalai Lenin',
+    serviceTrack: 'Social Media + Meta Ads',
     clientType: 'E-commerce Brand',
     title: 'Building a Strong E-commerce Brand with Strategic Content & Performance Ads',
     excerpt:
       'We helped Kalai Lenin grow as a recognizable e-commerce brand using consistent branding, social media marketing, and high-converting Meta ad campaigns.',
-    bigResult: 'Stronger',
-    resultLabel: 'Brand + Conversion Engine',
     service: 'Branding + Social Media + Meta Ads',
     period: 'Ongoing',
     readTime: '6 min read',
@@ -386,14 +379,42 @@ export const CASE_STUDIES = [
     ]
   },
   {
+    slug: 'kalai-lenin-branding',
+    category: 'E-commerce',
+    clientGroup: 'kalai-lenin',
+    clientName: 'Kalai Lenin',
+    serviceTrack: 'Branding',
+    clientType: 'E-commerce Brand',
+    title: 'Crafting a Distinct Brand Identity for a Growing E-commerce Business',
+    excerpt:
+      'We defined Kalai Lenin\'s visual identity, tone of voice, and brand system to create a consistent and memorable presence across all platforms.',
+    service: 'Brand Identity + Visual Design',
+    period: 'Project delivery',
+    readTime: '5 min read',
+    image: kalaiLeninBrandingThumbnail,
+    imageAlt: 'Kalai Lenin brand identity and visual design overview',
+    tags: ['E-commerce', 'Branding', 'Visual Identity', 'Design'],
+    challenge:
+      'Kalai Lenin needed a strong and cohesive brand identity to stand out in a competitive e-commerce space and build long-term recognition across digital touchpoints.',
+    solution: [
+      'Defined the brand\'s visual identity including logo, color palette, typography, and design language.',
+      'Developed a consistent tone of voice and messaging framework to align communication across platforms.',
+      'Created brand guidelines to ensure uniformity across social media, packaging, and digital assets.',
+      'Designed key brand collateral to support product launches, campaigns, and customer touchpoints.'
+    ],
+    outcomes: [
+      'Established a clear and professional brand identity that builds recognition and trust.',
+      'Enabled consistent brand application across all platforms and marketing materials.',
+      'Strengthened the visual foundation for long-term brand growth and audience loyalty.'
+    ]
+  },
+  {
     slug: 'navaren-shop',
     category: 'E-commerce',
     clientType: 'In-house E-commerce Brand',
     title: 'How We Built and Scaled Our Own E-commerce Brand Using Shopify & Performance Marketing',
     excerpt:
       'We built Navaren.shop from scratch using Shopify, integrated Cashfree Payments, and scaled it using social media marketing and data-driven Meta ads with Facebook Pixel tracking.',
-    bigResult: 'Higher',
-    resultLabel: 'ROI via Retargeting',
     service: 'Shopify + Cashfree + Pixel + Meta Ads',
     period: 'End-to-end rollout',
     readTime: '7 min read',
@@ -419,16 +440,19 @@ export const CASE_STUDIES = [
   {
     slug: 'glanceify-academy',
     category: 'Education',
+    clientGroup: 'glanceify-academy',
+    clientName: 'Glanceify Academy',
+    serviceTrack: 'Lead Generation + Meta Ads',
     clientType: 'Online Academy',
-    title: 'How We Generated 120+ Student Leads with Targeted Ads & Content Strategy',
+    title: 'How We Generated 110+ Student Leads with Targeted Ads & Content Strategy',
     excerpt:
-      'We helped Glanceify Academy generate 120+ qualified leads with ₹10.5K ad spend using strategic social media marketing and high-converting Meta ad campaigns.',
-    bigResult: '120+',
-    resultLabel: 'Qualified Student Leads',
+      'We helped Glanceify Academy generate 110+ qualified leads with ₹10.5K ad spend using strategic social media marketing and high-converting Meta ad campaigns.',
+    bigResult: '110+',
+    resultLabel: 'Qualified Leads',
     service: 'Social Media + Creative + Meta Ads',
     period: 'Campaign cycle',
     readTime: '6 min read',
-    image: '',
+    image: glanceifyAcademyThumbnail,
     imageAlt: 'Glanceify Academy lead campaign metrics and creative strategy',
     tags: ['Education', 'Meta Ads', 'Lead Generation', 'Social Media Marketing'],
     challenge:
@@ -447,14 +471,44 @@ export const CASE_STUDIES = [
     ]
   },
   {
+    slug: 'glanceify-academy-social-media-marketing',
+    category: 'Education',
+    clientGroup: 'glanceify-academy',
+    clientName: 'Glanceify Academy',
+    serviceTrack: 'Social Media Marketing',
+    clientType: 'Online Academy',
+    title: 'Building Student Trust & Engagement Through Consistent Social Media Marketing',
+    excerpt:
+      'We helped Glanceify Academy improve student engagement and top-of-funnel trust using a consistent, education-focused social media content strategy.',
+    bigResult: 'Consistent',
+    resultLabel: 'Engagement Growth',
+    service: 'Social Media Marketing + Creative Content',
+    period: 'Ongoing',
+    readTime: '5 min read',
+    image: glanceifySocialMediaMarketingThumbnail,
+    imageAlt: 'Glanceify Academy social media marketing performance snapshot',
+    tags: ['Education', 'Social Media Marketing', 'Content Strategy', 'Brand Trust'],
+    challenge:
+      'Glanceify Academy needed a stronger social media presence to build credibility, keep students engaged, and create demand before paid campaigns.',
+    solution: [
+      'Built a consistent education-first content calendar focused on student pain points, outcomes, and learning clarity.',
+      'Produced short-form social creatives combining authority hooks, practical tips, and clear CTA messaging.',
+      'Optimized format mix across reels, carousels, and static creatives to improve saves, shares, and profile interactions.',
+      'Used performance insights to refine posting themes, timing, and creative angles for sustained engagement.'
+    ],
+    outcomes: [
+      'Improved content consistency and stronger audience familiarity with the brand.',
+      'Increased engagement quality through save/share-oriented educational content.',
+      'Built a stronger trust layer that supports downstream lead generation campaigns.'
+    ]
+  },
+  {
     slug: 'tclc-ai-lead-system',
     category: 'Saas & Tech',
     clientType: 'SaaS Brand',
     title: 'How We Built a Multi-Channel Lead Generation System for a SaaS Brand',
     excerpt:
       'We helped TCLC.ai generate consistent leads using a multi-channel strategy including social media marketing, cold outreach, and performance-driven campaigns.',
-    bigResult: 'Multi-Channel',
-    resultLabel: 'Lead Engine',
     service: 'Social + Outbound + Performance Marketing',
     period: 'Ongoing',
     readTime: '7 min read',
@@ -483,12 +537,10 @@ export const CASE_STUDIES = [
     title: 'Strengthening Business Operations with Digital Infrastructure & Branding Support',
     excerpt:
       'We supported Deeproot with email setup, server maintenance, and graphic design to enhance their operational efficiency and professional brand presence.',
-    bigResult: 'Stronger',
-    resultLabel: 'Operational Backbone',
     service: 'Email Setup + Server Maintenance + Design Support',
     period: 'Ongoing support',
     readTime: '6 min read',
-    image: '',
+    image: deeprootThumbnail,
     imageAlt: 'Deeproot digital infrastructure and branding support overview',
     tags: ['Manufacturing', 'Infrastructure', 'Server Support', 'Branding'],
     challenge:
@@ -513,12 +565,10 @@ export const CASE_STUDIES = [
     title: 'Building a Reliable Digital Foundation for a Multi-Service Business',
     excerpt:
       'We helped Pathway enhance their business operations with email setup, server maintenance, and consistent graphic design support.',
-    bigResult: 'Reliable',
-    resultLabel: 'Digital Operations',
     service: 'Email Setup + Server Maintenance + Graphic Design',
     period: 'Ongoing support',
     readTime: '5 min read',
-    image: '',
+    image: deeprootThumbnail,
     imageAlt: 'Pathway digital systems and branding support overview',
     tags: ['Manufacturing', 'Infrastructure', 'Email Setup', 'Branding'],
     challenge:

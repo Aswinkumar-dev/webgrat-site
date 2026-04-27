@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import SEOHead from '../seo/SEOHead'
 import ScrollReveal from '../components/ui/ScrollReveal'
@@ -17,6 +17,19 @@ export default function CaseStudies() {
   useEffect(() => {
     setActiveFilter(resolvedFilter)
   }, [resolvedFilter])
+
+  const filteredCaseStudies = useMemo(
+    () => CASE_STUDIES.filter((cs) => activeFilter === 'All' || cs.category === activeFilter),
+    [activeFilter],
+  )
+
+  const clientServiceCounts = useMemo(() => {
+    return filteredCaseStudies.reduce((acc, cs) => {
+      if (!cs.clientGroup) return acc
+      acc[cs.clientGroup] = (acc[cs.clientGroup] || 0) + 1
+      return acc
+    }, {})
+  }, [filteredCaseStudies])
 
   const handleFilterClick = (filter) => {
     setActiveFilter(filter)
@@ -48,21 +61,20 @@ export default function CaseStudies() {
 
       <section style={{ paddingTop: 0 }}>
         <div className="container">
-          <ScrollReveal>
-            <div className={styles.filterBar}>
-              {FILTERS.map(f => (
-                <button
-                  key={f}
-                  className={`${styles.filterBtn} ${activeFilter === f ? styles.active : ''}`}
-                  onClick={() => handleFilterClick(f)}
-                >
-                  {f}
-                </button>
-              ))}
-            </div>
+          <div className={styles.filterBar}>
+            {FILTERS.map(f => (
+              <button
+                key={f}
+                className={`${styles.filterBtn} ${activeFilter === f ? styles.active : ''}`}
+                onClick={() => handleFilterClick(f)}
+              >
+                {f}
+              </button>
+            ))}
+          </div>
 
-            <div className={styles.grid}>
-              {CASE_STUDIES.filter(cs => activeFilter === 'All' || cs.category === activeFilter).map((cs, i) => (
+          <div className={styles.grid}>
+            {filteredCaseStudies.map((cs, i) => (
                 <Link key={cs.slug || i} to={`/case-studies/${cs.slug}`} className={styles.card}>
                   {cs.image ? (
                     <img src={cs.image} alt={cs.imageAlt || cs.title} className={styles.coverImage} />
@@ -80,11 +92,24 @@ export default function CaseStudies() {
                   <div className={styles.cardBody}>
                     <div className={styles.meta}>
                       <span className={styles.category}>{cs.category}</span>
-                      <span className={styles.readTime}>2 min read</span>
                     </div>
 
                     <h3 className={styles.title}>{cs.title}</h3>
                     <p className={styles.excerpt}>{cs.excerpt}</p>
+
+                    {(cs.clientName || cs.serviceTrack) && (
+                      <div className={styles.serviceMeta}>
+                        {cs.clientName && <span>{cs.clientName}</span>}
+                        {cs.clientName && cs.serviceTrack && <span className={styles.serviceDot}>•</span>}
+                        {cs.serviceTrack && <span>{cs.serviceTrack}</span>}
+                      </div>
+                    )}
+
+                    {cs.clientGroup && clientServiceCounts[cs.clientGroup] > 1 && (
+                      <span className={styles.multiServiceBadge}>
+                        {clientServiceCounts[cs.clientGroup]} services available for this client
+                      </span>
+                    )}
 
                     <div className={styles.tags}>
                       {cs.tags.map(tag => (
@@ -107,8 +132,7 @@ export default function CaseStudies() {
                   </div>
                 </Link>
               ))}
-            </div>
-          </ScrollReveal>
+          </div>
         </div>
       </section>
 

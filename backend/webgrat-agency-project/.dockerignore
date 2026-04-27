@@ -1,0 +1,37 @@
+# Build artefacts
+target/
+build/
+*.jar
+*.war
+
+# IDE / editor noise
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+.classpath
+.project
+.settings/
+
+# Local-only Spring profile (contains secrets) — never ship in image
+src/main/resources/application-local.properties
+
+# Maven wrapper (we use the maven:3.9 base image, not mvnw)
+mvnw
+mvnw.cmd
+.mvn/
+
+# Logs / OS junk
+*.log
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Docs
+HELP.md
+README.md

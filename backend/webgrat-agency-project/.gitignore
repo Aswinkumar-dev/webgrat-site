@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Local-only Spring profile holding secrets for `dev` runs.
+# Activate with: -Dspring.profiles.active=local
+src/main/resources/application-local.properties

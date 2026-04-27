@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 
 import Layout from './components/layout/Layout'
@@ -30,10 +30,27 @@ import AdminBlogEdit from './pages/AdminBlogEdit'
 
 const PublicLayout = ({ children }) => <Layout>{children}</Layout>
 
+function MetaPixelPageTracker() {
+  const location = useLocation()
+
+  React.useEffect(() => {
+    if (typeof window === 'undefined' || typeof window.fbq !== 'function') return
+
+    const currentPath = `${location.pathname}${location.search}${location.hash}`
+    if (window.__lastMetaPixelPath === currentPath) return
+
+    window.__lastMetaPixelPath = currentPath
+    window.fbq('track', 'PageView')
+  }, [location.pathname, location.search, location.hash])
+
+  return null
+}
+
 export default function App() {
   return (
     <HelmetProvider>
       <BrowserRouter>
+        <MetaPixelPageTracker />
         <AuthProvider>
           <Routes>
             {/* ── Admin routes (no public navbar/footer) ─────── */}

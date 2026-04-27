@@ -1,0 +1,27 @@
+# ─────────────────────────────────────────────────────────────────────
+# Copy this file to  application-local.properties  (it is gitignored)
+# and fill in your real values. Then run the app with:
+#
+#   mvn spring-boot:run -Dspring-boot.run.profiles=local
+#
+# OR set spring.profiles.active=local in your IDE run configuration.
+# Spring will load application.properties first, then OVERRIDE any
+# matching key from application-local.properties.
+# ─────────────────────────────────────────────────────────────────────
+
+# Supabase Postgres (Session Pooler)
+spring.datasource.url=jdbc:postgresql://aws-1-ap-northeast-1.pooler.supabase.com:5432/postgres
+spring.datasource.username=postgres.<your-project-ref>
+spring.datasource.password=<your-db-password>
+
+# Supabase REST / Auth
+supabase.url=https://<your-project-ref>.supabase.co
+supabase.anon.key=<your-anon-key>
+supabase.service.role.key=<your-service-role-key>
+
+# Resend
+resend.api.key=re_<your-resend-key>
+
+# Local frontend + CORS
+allowed.origins=http://localhost:5173
+frontend.url=http://localhost:5173
