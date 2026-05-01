@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import Navbar from './Navbar'
 import Footer from './Footer'
+import WhatsAppButton from '../ui/WhatsAppButton'
 import styles from './Layout.module.css'
 
 export default function Layout({ children }) {
@@ -18,6 +19,7 @@ export default function Layout({ children }) {
         {children}
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
   )
 }

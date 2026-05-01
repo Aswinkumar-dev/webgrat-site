@@ -263,15 +263,29 @@
 
 @media (max-width: 768px) {
   .title {
-    font-size: 18px !important;
+    font-size: 23px !important;
+    line-height: 1.4;
   }
 
   .subtitle {
-    font-size: 13px;
+    font-size: 14px;
+    line-height: 1.6;
   }
 
   .content {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .content h2 {
     font-size: 16px;
+    font-weight: 600;
+    margin: 18px 0 8px;
+  }
+
+  .content li {
+    font-size: 14px;
+    margin-bottom: 8px;
   }
 
   .categoryCtaBox {
@@ -292,6 +306,6 @@
   }
 
   .relatedTitle {
-    font-size: 20px;
+    font-size: 17px;
   }
 }

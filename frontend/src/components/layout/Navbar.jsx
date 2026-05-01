@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import styles from './Navbar.module.css'
 import Button from '../ui/Button'
-import logoSrc from '../../assets/logo withoutbg.png'
+import logoSrc from '../../assets/logo withoutbg.webp'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -50,7 +50,7 @@ export default function Navbar() {
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''} ${menuOpen ? styles.menuActive : ''}`}>
       <div className={styles.inner}>
         <Link to="/" className={styles.logo}>
-          <img src={logoSrc} alt="Webgrat" className={styles.logoImg} />
+          <img src={logoSrc} alt="Webgrat" className={styles.logoImg} fetchPriority="high" />
           <div className={styles.logoBrand}>
             <span className={styles.logoText}>Webgrat</span>
             <span className={styles.logoSlogan}>YOUR GROWTH MULTIPLIER</span>
