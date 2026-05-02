@@ -12,6 +12,34 @@ import BlogCard from '../components/ui/BlogCard'
 import HeroGrowthVisual from '../components/home/HeroGrowthVisual'
 import styles from './Home.module.css'
 
+import allThingsVedicBanner from '../assets/all things vedic banner.webp'
+import astroNaveenBanner from '../assets/astro naveen banner.webp'
+import bharatLogoBanner from '../assets/bharat logo banner.webp'
+import boomiPropertyBanner from '../assets/boomi property banner.webp'
+import glanceifyLogoBanner from '../assets/glanceify logo banner.webp'
+import kalaiLeninBanner from '../assets/kalai lenin banner.webp'
+import littleStepzBanner from '../assets/little stepz banner.webp'
+import majuGroupsBanner from '../assets/maju groups banner.webp'
+import nannilaNamBanner from '../assets/nannilam logo banner.webp'
+import raasiEngineeringBanner from '../assets/raasi engineering banner.webp'
+import rainbowTailersBanner from '../assets/rainbow tailers banner.webp'
+import sunwinLogoBanner from '../assets/sunwin logo banner.webp'
+
+const bannerImages = [
+  { src: allThingsVedicBanner, alt: 'All Things Vedic' },
+  { src: astroNaveenBanner, alt: 'Astro Naveen' },
+  { src: bharatLogoBanner, alt: 'Bharat Paints' },
+  { src: boomiPropertyBanner, alt: 'Boomi Property' },
+  { src: glanceifyLogoBanner, alt: 'Glanceify' },
+  { src: kalaiLeninBanner, alt: 'Kalai Lenin' },
+  { src: littleStepzBanner, alt: 'Little Stepz Kids Clinic' },
+  { src: majuGroupsBanner, alt: 'Maju Groups' },
+  { src: nannilaNamBanner, alt: 'Nannilam Nammidam' },
+  { src: raasiEngineeringBanner, alt: 'Raasi Engineering' },
+  { src: rainbowTailersBanner, alt: 'Rainbow Tailers' },
+  { src: sunwinLogoBanner, alt: 'Sunwin' },
+]
+
 const Icons = {
   Circuit: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -107,30 +135,12 @@ export default function Home() {
       <div className={styles.logosStrip}>
         <div className={styles.logosLabel}>Trusted by</div>
         <div className={styles.logosTrack}>
-            <span className={styles.logoItem}>Nannilam Nammidam</span>
-            <span className={styles.logoItem}>Little Stepz Kids Clinic</span>
-            <span className={styles.logoItem}>All Things Vedic</span>
-            <span className={styles.logoItem}>Glanceify Academy</span>
-            <span className={styles.logoItem}>Raasi Engineering</span>
-            <span className={styles.logoItem}>Tclc.ai</span>
-            <span className={styles.logoItem}>Kalai Linen</span>
-            <span className={styles.logoItem}>Vaishnah Naturals</span>
-            <span className={styles.logoItem}>Senthoor Properties</span>
-            <span className={styles.logoItem}>AA Promoters</span>
-            <span className={styles.logoItem}>Astro Naveen</span>
-            {/* Duplicated for seamless infinite scroll */}
-            <span className={styles.logoItem}>Nannilam Nammidam</span>
-            <span className={styles.logoItem}>Little Stepz Kids Clinic</span>
-            <span className={styles.logoItem}>All Things Vedic</span>
-            <span className={styles.logoItem}>Glanceify Academy</span>
-            <span className={styles.logoItem}>Raasi Engineering</span>
-            <span className={styles.logoItem}>Tclc.ai</span>
-            <span className={styles.logoItem}>Kalai Linen</span>
-            <span className={styles.logoItem}>Vaishnah Naturals</span>
-            <span className={styles.logoItem}>Senthoor Properties</span>
-            <span className={styles.logoItem}>AA Promoters</span>
-            <span className={styles.logoItem}>Astro Naveen</span>
-          </div>
+          {[...bannerImages, ...bannerImages].map((img, idx) => (
+            <div key={idx} className={styles.logoItem}>
+              <img src={img.src} alt={img.alt} className={styles.logoImg} />
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Services Section */}

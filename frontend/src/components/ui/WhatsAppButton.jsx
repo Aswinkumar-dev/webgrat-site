@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styles from './WhatsAppButton.module.css'
-import whatsappLogo from '../../assets/whastapp logo.png'
+import whatsappLogo from '../../assets/whastapp logo.webp'
 
 const WHATSAPP_NUMBER = '918903033920'
 const WHATSAPP_MESSAGE = 'Hi Webgrat! I\'d like to know more about your services.'
