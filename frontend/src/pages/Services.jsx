@@ -115,12 +115,12 @@ export default function Services() {
         <div className={styles.heroBg}></div>
         <div className={`container ${styles.heroGrid}`}>
           <div className={styles.heroCopy}>
-            <ScrollReveal delay={0}>
+            <ScrollReveal delay={0} className={styles.heroBadgeWrap}>
               <Badge>What We Offer</Badge>
             </ScrollReveal>
             <ScrollReveal delay={100}>
               <h1 className={styles.heroH1}>
-                Digital Marketing &amp; AI Solutions That Drive{' '}
+              Digital Marketing &amp; AI Solutions That Drive{' '}
                 <span className={styles.heroAccent}>Real Growth</span>
               </h1>
             </ScrollReveal>

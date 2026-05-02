@@ -103,7 +103,7 @@ export default function Home() {
         </div>
         <div className={`container ${styles.heroGrid}`}>
           <div className={styles.heroCopy}>
-            <ScrollReveal delay={0}>
+            <ScrollReveal delay={0} className={styles.heroBadgeWrap}>
               <Badge>AI-Powered &middot; Performance-Driven &middot; Results-Obsessed</Badge>
             </ScrollReveal>
             <ScrollReveal delay={100}>
@@ -137,7 +137,7 @@ export default function Home() {
         <div className={styles.logosTrack}>
           {[...bannerImages, ...bannerImages].map((img, idx) => (
             <div key={idx} className={styles.logoItem}>
-              <img src={img.src} alt={img.alt} className={styles.logoImg} />
+              <img src={img.src} alt={img.alt} className={styles.logoImg} loading="lazy" />
             </div>
           ))}
         </div>

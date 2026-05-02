@@ -106,6 +106,7 @@ export default function BlogPost() {
                           alt={post.author.fullName || 'Author'}
                           className={styles.authorImg}
                           style={{ objectFit: 'cover' }}
+                          loading="lazy"
                         />
                       ) : (
                         <div className={styles.authorImg}></div>

@@ -77,7 +77,7 @@ export default function CaseStudies() {
             {filteredCaseStudies.map((cs, i) => (
                 <Link key={cs.slug || i} to={`/case-studies/${cs.slug}`} className={styles.card}>
                   {cs.image ? (
-                    <img src={cs.image} alt={cs.imageAlt || cs.title} className={styles.coverImage} />
+                    <img src={cs.image} alt={cs.imageAlt || cs.title} className={styles.coverImage} loading="lazy" />
                   ) : (
                     <div className={styles.imagePlaceholder}>
                       <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">

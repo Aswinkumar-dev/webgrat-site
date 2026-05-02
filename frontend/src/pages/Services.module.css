@@ -3,7 +3,7 @@
   align-items: flex-start;
   position: relative;
   overflow: hidden;
-  padding-top: clamp(52px, 6vw, 72px);
+  padding-top: clamp(16px, 2vw, 28px);
   padding-bottom: clamp(44px, 5vw, 64px);
   background-color: var(--color-dark);
 }
@@ -292,7 +292,42 @@
 }
 
 @media (max-width: 768px) {
-  .heroH1 { font-size: 36px; }
+  .heroGrid {
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+  }
+
+  .heroVisual {
+    display: block;
+    max-width: 420px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .heroBadgeWrap {
+    text-align: center;
+  }
+
+  .heroCopy {
+    max-width: none;
+    width: 100%;
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .heroH1 {
+    font-size: 36px;
+    text-align: left !important;
+    max-width: none;
+    width: 100%;
+  }
+
+  .heroSub {
+    text-align: left !important;
+    max-width: none;
+    width: 100%;
+  }
+
   .servicesGrid { grid-template-columns: 1fr; }
   .detailGrid   { grid-template-columns: 1fr; }
 
