@@ -1,0 +1,10 @@
+spring.datasource.url=jdbc:postgresql://db.your-project.supabase.co:5432/postgres
+spring.datasource.username=postgres
+spring.datasource.password=your-db-password
+
+supabase.jwks-url=https://your-project.supabase.co/auth/v1/keys
+allowed.origins=https://webgrat.com
+
+resend.api-key=re_your_resend_api_key
+resend.from=hello@webgrat.com
+resend.to=your@email.com

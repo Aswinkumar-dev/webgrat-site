@@ -200,9 +200,20 @@ Runs at `http://localhost:8080`
 
 ---
 
-## 🔐 Environment Variables
+## 🔐 Environment Setup
 
-### Frontend (`frontend/.env`)
+> [!IMPORTANT]
+> Never commit your real credentials. The actual `.env` and `application.properties` files are listed in `.gitignore` and must **never** be pushed to GitHub.
+
+### Frontend
+
+Copy the example file and fill in your Supabase credentials:
+
+```bash
+cp frontend/.env.example frontend/.env
+```
+
+Then edit `frontend/.env`:
 
 ```env
 VITE_SUPABASE_URL=https://your-project.supabase.co
@@ -210,7 +221,16 @@ VITE_SUPABASE_ANON_KEY=your-anon-key
 VITE_API_BASE_URL=http://localhost:8080
 ```
 
-### Backend (`application.properties`)
+### Backend
+
+Copy the example file and fill in your database and API keys:
+
+```bash
+cp backend/application.properties.example \
+   backend/webgrat-agency-project/src/main/resources/application.properties
+```
+
+Then edit `application.properties`:
 
 ```properties
 spring.datasource.url=jdbc:postgresql://db.your-project.supabase.co:5432/postgres
@@ -226,6 +246,7 @@ resend.to=your@email.com
 ```
 
 ---
+
 
 ## 🌍 Deployment
 
