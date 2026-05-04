@@ -200,11 +200,6 @@ Runs at `http://localhost:8080`
 
 ---
 
-## 🔐 Environment Setup
-
-> [!IMPORTANT]
-> Never commit your real credentials. The actual `.env` and `application.properties` files are listed in `.gitignore` and must **never** be pushed to GitHub.
-
 ### Frontend
 
 Copy the example file and fill in your Supabase credentials:
