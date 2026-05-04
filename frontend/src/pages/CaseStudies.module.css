@@ -245,5 +245,9 @@
     white-space: normal;
     max-width: 520px;
   }
+  .filterBar {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
   .grid { grid-template-columns: 1fr; }
 }

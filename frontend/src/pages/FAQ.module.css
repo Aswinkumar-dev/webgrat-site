@@ -62,5 +62,5 @@
     white-space: normal;
   }
 
-  .categoryTabs { justify-content: flex-start; padding: 0 24px; overflow-x: auto; flex-wrap: nowrap; margin-bottom: 48px; }
+  .categoryTabs { justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
 }

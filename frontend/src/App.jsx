@@ -6,27 +6,25 @@ import Layout from './components/layout/Layout'
 import { AuthProvider } from './context/AuthContext'
 import ProtectedRoute from './components/auth/ProtectedRoute'
 
-// Home is eagerly loaded — it's the LCP page
-import Home from './pages/Home'
+// ── Eagerly loaded: all pages reachable from the navbar (instant navigation) ──
+import Home         from './pages/Home'
+import Services     from './pages/Services'
+import About        from './pages/About'
+import Blog         from './pages/Blog'
+import Contact      from './pages/Contact'
+import CaseStudies  from './pages/CaseStudies'
+import FAQ          from './pages/FAQ'
+import PrivacyPolicy     from './pages/PrivacyPolicy'
+import TermsAndConditions from './pages/TermsAndConditions'
+import ThankYou     from './pages/ThankYou'
 
-// All other pages are lazy-loaded to keep the initial bundle small
-const Services          = lazy(() => import('./pages/Services'))
-const About             = lazy(() => import('./pages/About'))
-const Blog              = lazy(() => import('./pages/Blog'))
-const BlogPost          = lazy(() => import('./pages/BlogPost'))
-const Contact           = lazy(() => import('./pages/Contact'))
-const CaseStudies       = lazy(() => import('./pages/CaseStudies'))
-const CaseStudyDetail   = lazy(() => import('./pages/CaseStudyDetail'))
-const FAQ               = lazy(() => import('./pages/FAQ'))
-const ThankYou          = lazy(() => import('./pages/ThankYou'))
-const PrivacyPolicy     = lazy(() => import('./pages/PrivacyPolicy'))
-const TermsAndConditions = lazy(() => import('./pages/TermsAndConditions'))
-
-// Admin pages (never visited by regular users)
-const AdminLogin    = lazy(() => import('./pages/AdminLogin'))
-const AdminBlogNew  = lazy(() => import('./pages/AdminBlogNew'))
-const AdminBlogList = lazy(() => import('./pages/AdminBlogList'))
-const AdminBlogEdit = lazy(() => import('./pages/AdminBlogEdit'))
+// ── Lazy-loaded: detail pages and admin (rarely visited, keep bundle lean) ────
+const BlogPost        = lazy(() => import('./pages/BlogPost'))
+const CaseStudyDetail = lazy(() => import('./pages/CaseStudyDetail'))
+const AdminLogin      = lazy(() => import('./pages/AdminLogin'))
+const AdminBlogNew    = lazy(() => import('./pages/AdminBlogNew'))
+const AdminBlogList   = lazy(() => import('./pages/AdminBlogList'))
+const AdminBlogEdit   = lazy(() => import('./pages/AdminBlogEdit'))
 
 const PageLoader = () => (
   <div style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>

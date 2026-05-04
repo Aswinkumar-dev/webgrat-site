@@ -37,15 +37,9 @@
 .categoryTabs {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 12px;
-  overflow-x: auto;
-  padding-bottom: 16px;
   margin-bottom: 48px;
-  scrollbar-width: none;
-}
-
-.categoryTabs::-webkit-scrollbar {
-  display: none;
 }
 
 .tabBtn {
@@ -170,5 +164,5 @@
   .grid { grid-template-columns: 1fr; }
   .newsletterForm { flex-direction: column; }
   .newsletterInput { padding: 14px 24px; }
-  .categoryTabs { justify-content: flex-start; padding: 0 24px 16px; }
+  .categoryTabs { justify-content: center; flex-wrap: wrap; }
 }
