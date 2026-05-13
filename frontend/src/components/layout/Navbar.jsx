@@ -21,36 +21,28 @@ export default function Navbar() {
     setMenuOpen(false)
   }, [location])
 
+  // Lock body scroll when mobile menu is open
   useEffect(() => {
-    if (!menuOpen) {
-      document.body.style.overflow = ''
-      return
-    }
-
-    document.body.style.overflow = 'hidden'
-    return () => {
-      document.body.style.overflow = ''
-    }
+    document.body.style.overflow = menuOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
   }, [menuOpen])
 
   const navLinks = [
     { label: 'Home', to: '/' },
     { label: 'Services', to: '/services' },
     { label: 'About', to: '/about' },
-    { label: 'Portfolio', to: '/case-studies' },
     { label: 'Blog', to: '/blog' },
-    { label: 'Contact', to: '/contact' },
-    { label: 'FAQ', to: '/faq' }
+    { label: 'Contact', to: '/contact' }
   ]
 
   const isActive = (to) =>
     to === '/' ? location.pathname === '/' : location.pathname.startsWith(to)
 
   return (
-    <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''} ${menuOpen ? styles.menuActive : ''}`}>
+    <nav className={`${styles.navbar} ${scrolled && !menuOpen ? styles.scrolled : ''} ${menuOpen ? styles.menuActive : ''}`}>
       <div className={styles.inner}>
         <Link to="/" className={styles.logo}>
-          <img src={logoSrc} alt="Webgrat" className={styles.logoImg} fetchPriority="high" />
+          <img src={logoSrc} alt="Webgrat" className={styles.logoImg} />
           <div className={styles.logoBrand}>
             <span className={styles.logoText}>Webgrat</span>
             <span className={styles.logoSlogan}>YOUR GROWTH MULTIPLIER</span>
@@ -84,10 +76,13 @@ export default function Navbar() {
         </button>
       </div>
 
-      <div
-        className={`${styles.mobileBackdrop} ${menuOpen ? styles.backdropOpen : ''}`}
-        onClick={() => setMenuOpen(false)}
-      />
+      {menuOpen && (
+        <div
+          className={styles.mobileBackdrop}
+          onClick={() => setMenuOpen(false)}
+          aria-hidden="true"
+        />
+      )}
 
       <div className={`${styles.mobileDrawer} ${menuOpen ? styles.drawerOpen : ''}`}>
         <div className={styles.mobileNavLinks}>

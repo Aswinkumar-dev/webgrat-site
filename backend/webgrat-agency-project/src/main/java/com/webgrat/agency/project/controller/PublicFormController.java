@@ -74,6 +74,41 @@ public class PublicFormController {
         }
     }
 
+    @PostMapping("/digital-growth-contact")
+    public ResponseEntity<MessageResponse> submitDigitalGrowthContact(@Valid @RequestBody ContactRequest request) {
+        try {
+            String storedMessage = composeStoredMessage(request);
+            supabaseRestService.saveContactSubmission(
+                    request.getName(),
+                    request.getEmail(),
+                    "[Digital Growth] " + storedMessage
+            );
+
+            emailService.sendDigitalGrowthNotification(
+                    request.getName(),
+                    request.getEmail(),
+                    request.getPhone(),
+                    request.getCompany(),
+                    request.getService(),
+                    request.getMessage()
+            );
+
+            emailService.sendContactConfirmation(request.getName(), request.getEmail());
+
+            return ResponseEntity.ok(new MessageResponse(
+                    "Message sent successfully. We'll get back to you within 1 business day.",
+                    true
+            ));
+        } catch (Exception e) {
+            log.error("Digital Growth contact submission failed", e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(new MessageResponse(
+                            "Failed to send message. Please try again later.",
+                            false
+                    ));
+        }
+    }
+
     @PostMapping("/subscribe")
     public ResponseEntity<MessageResponse> subscribe(@Valid @RequestBody SubscribeRequest request) {
         String email = request.getEmail().trim().toLowerCase();

@@ -168,16 +168,9 @@
 .mobileBackdrop {
   position: fixed;
   inset: 0;
-  background-color: #0d1628;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s ease;
+  background-color: rgba(0, 0, 0, 0.6);
   z-index: 1201;
-}
-
-.backdropOpen {
-  opacity: 1;
-  pointer-events: auto;
+  cursor: pointer;
 }
 
 .mobileDrawer {

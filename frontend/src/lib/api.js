@@ -91,5 +91,6 @@ export const endpoints = {
   deleteBlog: (id) => api.del(`/api/blogs/${id}`),
 
   submitContact: (payload) => api.post('/api/contact', payload),
+  submitDigitalGrowthContact: (payload) => api.post('/api/digital-growth-contact', payload),
   subscribeNewsletter: (email) => api.post('/api/subscribe', { email }),
 }

@@ -17,6 +17,7 @@ import FAQ          from './pages/FAQ'
 import PrivacyPolicy     from './pages/PrivacyPolicy'
 import TermsAndConditions from './pages/TermsAndConditions'
 import ThankYou     from './pages/ThankYou'
+import DigitalGrowth from './pages/DigitalGrowth'
 
 // ── Lazy-loaded: detail pages and admin (rarely visited, keep bundle lean) ────
 const BlogPost        = lazy(() => import('./pages/BlogPost'))
@@ -52,6 +53,7 @@ function MetaPixelPageTracker() {
 
   return null
 }
+
 
 export default function App() {
   return (
@@ -104,6 +106,7 @@ export default function App() {
                       <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
                       <Route path="/faq" element={<FAQ />} />
                       <Route path="/thank-you" element={<ThankYou />} />
+                      <Route path="/digital-growth" element={<DigitalGrowth />} />
                       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                       <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
                       <Route

@@ -96,7 +96,7 @@ export default function Footer() {
         </div>
 
         <div className={styles.bottomBar}>
-          <div>&copy; 2023 Webgrat. All rights reserved.</div>
+          <div>&copy; 2025 Webgrat. All rights reserved.</div>
           <div className={styles.legalLinks}>
             <Link to="/privacy-policy">Privacy Policy</Link>
             <Link to="/terms-and-conditions">Terms &amp; Conditions</Link>

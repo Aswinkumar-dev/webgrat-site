@@ -83,6 +83,30 @@ public class EmailService {
         }
     }
 
+    // ── Digital Growth landing page: notify admin ────────────────
+
+    public void sendDigitalGrowthNotification(String name,
+                                              String email,
+                                              String phone,
+                                              String company,
+                                              String service,
+                                              String message) {
+        CreateEmailOptions request = CreateEmailOptions.builder()
+                .from(fromEmail)
+                .to(adminEmail)
+                .replyTo(email)
+                .subject("[Digital Growth] New lead from " + name)
+                .html(buildDigitalGrowthEmailHtml(name, email, phone, company, service, message))
+                .build();
+
+        try {
+            resend.emails().send(request);
+            log.info("Digital Growth lead notification sent to admin for {}", email);
+        } catch (ResendException e) {
+            throw new RuntimeException("Failed to send digital growth lead notification", e);
+        }
+    }
+
     // ── Newsletter: welcome to subscriber ────────────────────────
 
     public void sendWelcomeEmail(String subscriberEmail) {
@@ -191,7 +215,7 @@ public class EmailService {
                   <p>In the meantime, feel free to reply to this email if you'd like to add anything to your enquiry.</p>
                   <p>— The Webgrat Team</p>
                 </div>
-                <div class="footer">© 2023 Webgrat. All rights reserved.</div>
+                <div class="footer">© 2025 Webgrat. All rights reserved.</div>
               </div>
             </body>
             </html>
@@ -235,12 +259,62 @@ public class EmailService {
                 </div>
                 <div class="footer">
                   You can unsubscribe anytime.<br>
-                  © 2023 Webgrat. All rights reserved.
+                  © 2025 Webgrat. All rights reserved.
                 </div>
               </div>
             </body>
             </html>
             """;
+    }
+
+    private String buildDigitalGrowthEmailHtml(String name,
+                                               String email,
+                                               String phone,
+                                               String company,
+                                               String service,
+                                               String message) {
+        String safePhone = (phone == null || phone.isBlank()) ? "—" : escape(phone);
+        String safeCompany = (company == null || company.isBlank()) ? "—" : escape(company);
+        String safeService = (service == null || service.isBlank()) ? "—" : escape(service);
+        String safeMessage = escape(message).replace("\n", "<br>");
+
+        return """
+            <!DOCTYPE html>
+            <html>
+            <head>
+              <meta charset="utf-8">
+              <style>
+                body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; background:#f4f4f7; margin:0; padding:24px; }
+                .container { max-width: 620px; margin: 0 auto; background:#ffffff; border-radius:10px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.06); }
+                .header { background:#0b1120; color:#ffffff; padding:24px 28px; }
+                .header h2 { margin:0; font-size:20px; }
+                .source { display:inline-block; margin-top:8px; padding:4px 10px; background:rgba(46,247,142,0.15); color:#2ef78e; border-radius:4px; font-size:12px; font-weight:600; letter-spacing:0.05em; }
+                .content { padding:28px; }
+                .field { margin-bottom:18px; }
+                .label { font-weight:600; color:#555; font-size:13px; text-transform:uppercase; letter-spacing:0.04em; }
+                .value { margin-top:6px; padding:12px 14px; background:#f7f9fc; border-left:3px solid #00ff88; border-radius:4px; word-break:break-word; }
+                a { color:#0b66ff; }
+              </style>
+            </head>
+            <body>
+              <div class="container">
+                <div class="header">
+                  <h2>New lead from Digital Growth page</h2>
+                  <span class="source">webgrat.com/digital-growth</span>
+                </div>
+                <div class="content">
+                  <div class="field"><div class="label">Name</div><div class="value">%s</div></div>
+                  <div class="field"><div class="label">Email</div><div class="value"><a href="mailto:%s">%s</a></div></div>
+                  <div class="field"><div class="label">Phone</div><div class="value">%s</div></div>
+                  <div class="field"><div class="label">Business</div><div class="value">%s</div></div>
+                  <div class="field"><div class="label">Service Interested In</div><div class="value">%s</div></div>
+                  <div class="field"><div class="label">Goals / Message</div><div class="value">%s</div></div>
+                </div>
+              </div>
+            </body>
+            </html>
+            """.formatted(escape(name), escape(email), escape(email),
+                          safePhone, safeCompany, safeService, safeMessage);
     }
 
     /** Minimal HTML escaping — enough to keep user input from breaking the template. */

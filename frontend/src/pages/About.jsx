@@ -92,7 +92,7 @@ export default function About() {
           <ScrollReveal>
             <div className={styles.teamGrid}>
               {[
-                { name: 'Naresh kanna', role: 'Founder & Head of Strategy', initials: 'NR', bio: 'Naresh Kanna leads Webgrat’s strategy, aligning client goals with growth-focused solutions.'},
+                { name: 'Naresh kanna', role: 'Co-Founder & Head of Strategy', initials: 'NR', bio: 'Naresh Kanna leads Webgrat’s strategy, aligning client goals with growth-focused solutions.'},
                 { name: 'Aswinkumar', role: 'Co-Founder & Growth Systems Lead', initials: 'AK', bio: 'Aswinkumar leads campaign ideation, web development, and AI automation to build scalable solutions.'},
                 { name: 'Deepa', role: 'Content & Performance Lead', initials: 'DM', bio: 'Deepa leads content and campaigns, driving high-performing ads that generate qualified leads.'},
                 { name: 'Praveen', role: 'Creative Strategist & Video Editor', initials: 'PS', bio: 'Pradeep crafts persuasive ad scripts that drive engagement and conversions..'}

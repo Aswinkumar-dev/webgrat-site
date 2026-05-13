@@ -448,4 +448,10 @@
     animation: marquee 20s linear infinite;
     min-width: 200%;
   }
+
+  .logoItem {
+    width: 90px;
+    height: 90px;
+    padding: 10px;
+  }
 }

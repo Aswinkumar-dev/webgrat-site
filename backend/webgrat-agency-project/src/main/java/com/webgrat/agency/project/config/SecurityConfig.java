@@ -67,6 +67,7 @@ public class SecurityConfig {
                         // Public form submissions from the marketing site
                         .requestMatchers(HttpMethod.POST,
                                 "/api/contact",
+                                "/api/digital-growth-contact",
                                 "/api/subscribe"
                         ).permitAll()
                         // Allow CORS preflight on every endpoint

@@ -265,8 +265,16 @@ export default function Services() {
                   <li>Competitor insights to uncover missed opportunities</li>
                   <li>Actionable strategy to boost reach, leads, and conversions</li>
                 </ul>
+                <h4 className={styles.detailCardSubhead}>Our Process:</h4>
+                <div className={styles.processFlow}>
+                  Analyse <span className={styles.processArrow}>&rarr;</span>
+                  Audit <span className={styles.processArrow}>&rarr;</span>
+                  Improve <span className={styles.processArrow}>&rarr;</span>
+                  Plan <span className={styles.processArrow}>&rarr;</span>
+                  Execute
+                </div>
                 <div className={styles.detailCardFooter}>
-                  <Button variant="secondary" to="/contact">Audit My Growth</Button>
+                  <Button variant="secondary" to="/contact">Analyse My Social Media</Button>
                 </div>
               </div>
             </ScrollReveal>
@@ -284,8 +292,16 @@ export default function Services() {
                   <li>Consistent brand style across all creatives</li>
                   <li>End-to-end creative production tailored for your campaigns</li>
                 </ul>
+                <h4 className={styles.detailCardSubhead}>Our Process:</h4>
+                <div className={styles.processFlow}>
+                  Ideate <span className={styles.processArrow}>&rarr;</span>
+                  Shoot <span className={styles.processArrow}>&rarr;</span>
+                  Design <span className={styles.processArrow}>&rarr;</span>
+                  Edit <span className={styles.processArrow}>&rarr;</span>
+                  Publish
+                </div>
                 <div className={styles.detailCardFooter}>
-                  <Button variant="secondary" to="/contact">Make My Brand Stand Out</Button>
+                  <Button variant="secondary" to="/contact">Shoot High-Converting Ads</Button>
                 </div>
               </div>
             </ScrollReveal>
