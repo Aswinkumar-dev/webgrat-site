@@ -31,6 +31,7 @@ export default function Navbar() {
     { label: 'Home', to: '/' },
     { label: 'Services', to: '/services' },
     { label: 'About', to: '/about' },
+    { label: 'Portfolio', to: '/case-studies' },
     { label: 'Blog', to: '/blog' },
     { label: 'Contact', to: '/contact' }
   ]

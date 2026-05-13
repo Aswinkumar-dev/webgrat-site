@@ -23,13 +23,6 @@ export default function CaseStudies() {
     [activeFilter],
   )
 
-  const clientServiceCounts = useMemo(() => {
-    return filteredCaseStudies.reduce((acc, cs) => {
-      if (!cs.clientGroup) return acc
-      acc[cs.clientGroup] = (acc[cs.clientGroup] || 0) + 1
-      return acc
-    }, {})
-  }, [filteredCaseStudies])
 
   const handleFilterClick = (filter) => {
     setActiveFilter(filter)
@@ -97,38 +90,12 @@ export default function CaseStudies() {
                     <h3 className={styles.title}>{cs.title}</h3>
                     <p className={styles.excerpt}>{cs.excerpt}</p>
 
-                    {(cs.clientName || cs.serviceTrack) && (
-                      <div className={styles.serviceMeta}>
-                        {cs.clientName && <span>{cs.clientName}</span>}
-                        {cs.clientName && cs.serviceTrack && <span className={styles.serviceDot}>•</span>}
-                        {cs.serviceTrack && <span>{cs.serviceTrack}</span>}
-                      </div>
-                    )}
-
-                    {cs.clientGroup && clientServiceCounts[cs.clientGroup] > 1 && (
-                      <span className={styles.multiServiceBadge}>
-                        {clientServiceCounts[cs.clientGroup]} services available for this client
-                      </span>
-                    )}
-
                     <div className={styles.tags}>
                       {cs.tags.map(tag => (
                         <span key={tag} className={styles.tag}>{tag}</span>
                       ))}
                     </div>
 
-                    <div className={styles.resultRow}>
-                      <span className={styles.bigResult}>{cs.bigResult}</span>
-                      <span className={styles.resultLabel}>{cs.resultLabel}</span>
-                    </div>
-
-                    <div className={styles.readMore}>
-                      Read case study
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
-                      </svg>
-                    </div>
                   </div>
                 </Link>
               ))}
