@@ -33,6 +33,7 @@ export default function Navbar() {
     { label: 'About', to: '/about' },
     { label: 'Portfolio', to: '/case-studies' },
     { label: 'Blog', to: '/blog' },
+    { label: 'FAQ', to: '/faq' },
     { label: 'Contact', to: '/contact' }
   ]
 
