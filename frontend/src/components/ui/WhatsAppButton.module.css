@@ -80,8 +80,8 @@
   }
 }
 
-/* Show tooltip in desktop-view-on-mobile (touch device with wide viewport) */
-@media (min-width: 1024px) and (pointer: coarse) {
+/* Show tooltip in desktop-view-on-mobile (wide viewport on any touch browser) */
+@media (min-width: 1024px) {
   .tooltip {
     display: block;
   }

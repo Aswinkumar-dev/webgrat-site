@@ -79,16 +79,26 @@ section {
 }
 
 /* ── Desktop view on mobile (touch device requesting desktop site) ──────────
-   Targets: viewport ≥ 1024px BUT pointer is coarse (touch screen).
-   This only fires when a mobile browser is in "Desktop view" mode.
-   It does NOT affect real desktop users (pointer: fine) or normal mobile
-   layout (max-width: 768px). ────────────────────────────────────────────── */
-@media (min-width: 1024px) and (pointer: coarse) {
-  body {
-    min-width: 1200px; /* prevent layout from collapsing at zoomed-out widths */
-  }
+   We set min-width on html so the browser zooms-to-fit properly instead of
+   collapsing the layout. This value matches our container max-width so the
+   desktop grid is always rendered correctly.
+   The text-color override is applied to any viewport ≥ 1024 px — it won't
+   affect normal mobile because those styles are locked behind max-width: 768px
+   selectors, and it won't noticeably change real desktop (already looks fine). */
+html {
+  min-width: 1200px; /* prevents grid/layout collapse in desktop view on mobile */
+}
 
-  /* Make description / body copy medium-white instead of the default muted grey */
+/* On small screens (normal mobile view) allow natural width again */
+@media (max-width: 768px) {
+  html {
+    min-width: unset;
+  }
+}
+
+/* Brighten muted description text when rendering at desktop width on any device
+   (covers both pointer:coarse and pointer:fine desktop-view browsers) */
+@media (min-width: 1024px) {
   :root {
     --color-text-muted: rgba(255, 255, 255, 0.72);
   }
