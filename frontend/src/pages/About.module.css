@@ -445,6 +445,12 @@
 }
 
 @media (max-width: 992px) {
+  .missionVision { grid-template-columns: 1fr; }
+  .teamGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Hero stays two-column until 860px — preserves layout in desktop-view-on-mobile */
+@media (max-width: 860px) {
   .heroGrid {
     grid-template-columns: 1fr;
     gap: 36px;
@@ -473,9 +479,6 @@
   .heroVisual {
     justify-self: center;
   }
-
-  .missionVision { grid-template-columns: 1fr; }
-  .teamGrid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {

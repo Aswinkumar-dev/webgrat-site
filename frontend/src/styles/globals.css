@@ -78,28 +78,19 @@ section {
   }
 }
 
-/* ── Desktop view on mobile (touch device requesting desktop site) ──────────
-   We set min-width on html so the browser zooms-to-fit properly instead of
-   collapsing the layout. This value matches our container max-width so the
-   desktop grid is always rendered correctly.
-   The text-color override is applied to any viewport ≥ 1024 px — it won't
-   affect normal mobile because those styles are locked behind max-width: 768px
-   selectors, and it won't noticeably change real desktop (already looks fine). */
-html {
-  min-width: 1200px; /* prevents grid/layout collapse in desktop view on mobile */
-}
+/* ── Desktop-view-on-mobile fixes ──────────────────────────────────────
+   JS in App.jsx sets [data-mobile-browser="true"] on <html> when the UA is
+   Android / iPhone / iPad. This attribute persists even when the user enables
+   "Desktop site" in their mobile browser, so the rules below ONLY apply to
+   mobile devices — real desktop users are never affected.
+   ───────────────────────────────────────────────────────── */
 
-/* On small screens (normal mobile view) allow natural width again */
-@media (max-width: 768px) {
-  html {
-    min-width: unset;
-  }
-}
-
-/* Brighten muted description text when rendering at desktop width on any device
-   (covers both pointer:coarse and pointer:fine desktop-view browsers) */
-@media (min-width: 1024px) {
-  :root {
-    --color-text-muted: rgba(255, 255, 255, 0.72);
+/* Brighten muted text ONLY when a mobile browser shows desktop-width content.
+   Scoped to min-width: 769px so normal mobile view (max-width: 768px) is
+   untouched. */
+@media (min-width: 769px) {
+  [data-mobile-browser="true"] {
+    --color-text-muted: rgba(255, 255, 255, 0.75);
+    --color-text-secondary: rgba(255, 255, 255, 0.88);
   }
 }

@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react'
+import React, { Suspense, lazy, useEffect } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 
@@ -56,6 +56,17 @@ function MetaPixelPageTracker() {
 
 
 export default function App() {
+  // Detect mobile browsers (Android/iPhone/iPad) — this flag stays true even
+  // when the user requests "Desktop site" in their mobile browser, letting us
+  // apply desktop-view-on-mobile CSS fixes without touching real desktop styles.
+  useEffect(() => {
+    const isMobileBrowser = /Android|iPhone|iPad|iPod|webOS|BlackBerry|IEMobile|Opera Mini/i
+      .test(navigator.userAgent)
+    if (isMobileBrowser) {
+      document.documentElement.setAttribute('data-mobile-browser', 'true')
+    }
+  }, [])
+
   return (
     <HelmetProvider>
       <BrowserRouter>

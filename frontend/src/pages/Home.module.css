@@ -348,7 +348,12 @@
   .processGrid {
     grid-template-columns: 1fr;
   }
+}
 
+/* Hero collapses to single column at 860px — this keeps the two-column
+   layout at ~980px (Chrome Android desktop view) so content stays left
+   and the visual stays right, matching real desktop appearance. */
+@media (max-width: 860px) {
   .heroGrid {
     grid-template-columns: 1fr;
     column-gap: 0;
@@ -359,13 +364,6 @@
 
   .heroCopy {
     padding-right: 0;
-  }
-
-  .heroVisual {
-    padding-left: 0;
-  }
-
-  .heroCopy {
     max-width: none;
     order: 0;
   }
@@ -375,11 +373,11 @@
   }
 
   .heroVisual {
+    padding-left: 0;
     justify-self: center;
     max-width: 440px;
     order: 1;
   }
-
 }
 
 @media (max-width: 768px) {
