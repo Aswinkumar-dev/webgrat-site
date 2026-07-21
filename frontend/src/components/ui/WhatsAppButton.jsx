@@ -21,7 +21,7 @@ export default function WhatsAppButton() {
       onMouseLeave={() => setHovered(false)}
     >
       <span className={`${styles.tooltip} ${hovered ? styles.tooltipVisible : ''}`}>
-        Chat with us
+        Book a free consultation
       </span>
       <img src={whatsappLogo} alt="WhatsApp" className={styles.icon} />
     </a>

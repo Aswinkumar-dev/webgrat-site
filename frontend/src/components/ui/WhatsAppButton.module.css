@@ -30,19 +30,22 @@
 
 .tooltip {
   position: absolute;
-  right: calc(100% + 12px);
+  right: calc(100% + 14px);
   top: 50%;
   transform: translateY(-50%);
-  background-color: #1a1a1a;
+  background: linear-gradient(135deg, #0D2B1A 0%, #0A1F14 100%);
+  border: 1px solid rgba(37, 211, 102, 0.35);
   color: #fff;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 600;
   white-space: nowrap;
-  padding: 6px 12px;
-  border-radius: 8px;
+  padding: 8px 14px;
+  border-radius: 10px;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.2s ease;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.25), 0 2px 8px rgba(0,0,0,0.4);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  letter-spacing: 0.01em;
 }
 
 .tooltip::after {
@@ -52,7 +55,7 @@
   top: 50%;
   transform: translateY(-50%);
   border: 6px solid transparent;
-  border-left-color: #1a1a1a;
+  border-left-color: #0D2B1A;
 }
 
 .tooltipVisible {
@@ -63,17 +66,24 @@
   .button {
     bottom: 20px;
     right: 16px;
-    width: 50px;
-    height: 50px;
+    width: 62px;
+    height: 62px;
   }
 
   .icon {
-    width: 50px;
-    height: 50px;
+    width: 62px;
+    height: 62px;
   }
 
   .tooltip {
     display: none;
+  }
+}
+
+/* Show tooltip in desktop-view-on-mobile (touch device with wide viewport) */
+@media (min-width: 1024px) and (pointer: coarse) {
+  .tooltip {
+    display: block;
   }
 }
 
